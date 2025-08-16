@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import GitHubContributionGraph from "./GitHubContributionGraph";
+
 export default function Resume() {
   const [activeTab, setActiveTab] = useState("education");
 
@@ -41,26 +41,28 @@ export default function Resume() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold">My Resume</h2>
         </div>
-
+        
         <div className="flex justify-center mb-12">
           <div className="bg-gray-900 rounded-lg p-2">
             <button
-              className={`px-6 py-3 rounded-lg transition-colors ${activeTab === "education"
+              className={`px-6 py-3 rounded-lg transition-colors ${
+                activeTab === "education"
                   ? "bg-blue-600 text-white"
                   : "text-gray-400 hover:text-white"
-                }`}
+              }`}
               onClick={() => setActiveTab("education")}
             >
               Education
             </button>
             <button
-              className={`px-6 py-3 rounded-lg transition-colors ${activeTab === "skills"
+              className={`px-6 py-3 rounded-lg transition-colors ${
+                activeTab === "skills"
                   ? "bg-blue-600 text-white"
                   : "text-gray-400 hover:text-white"
-                }`}
+              }`}
               onClick={() => setActiveTab("skills")}
             >
-              Github
+              Professional Skills
             </button>
           </div>
         </div>
@@ -85,7 +87,23 @@ export default function Resume() {
 
         {activeTab === "skills" && (
           <div className="max-w-2xl mx-auto">
-            <GitHubContributionGraph year={2025} />
+            <h3 className="text-2xl font-semibold mb-8 text-center text-blue-400">Development Skills</h3>
+            <div className="space-y-6">
+              {skills.map((skill, index) => (
+                <div key={index}>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-lg font-medium">{skill.name}</span>
+                    <span className="text-blue-400">{skill.percentage}%</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div
+                      className="bg-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                      style={{ width: `${skill.percentage}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
