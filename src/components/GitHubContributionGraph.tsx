@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const GITHUB_USERNAME = "roy-dela-torre";
-const GITHUB_TOKEN = "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"; // Never commit this in production!
+const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN as string;
 
 interface ContributionDay {
   contributionCount: number;
