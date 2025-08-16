@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { year, username } = req.query;
-  const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN; // This is *NOT* exposed to the client!
+  const token = process.env.GITHUB_TOKEN; // Only server can access this!
   if (!token) return res.status(500).json({ error: "Token missing" });
 
   const from = `${year}-01-01T00:00:00Z`;
