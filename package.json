@@ -1,12 +1,12 @@
 {
-  "name": "modern-portfolio-&-blog",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start"
   },
   "dependencies": {
     "gl-matrix": "^3.4.4",
