@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
             enableMobileTilt={false}
             onContactClick={() => console.log('Contact clicked')}
             className="block lg:hidden mb-8 w-full"
-            behindGradient={false}
+            behindGradient=""
           />
           <p className="text-lg max-w-xl text-slate-400 mb-8">
             I'm a web developer specializing in building custom themes and applications on platforms like WordPress and Shopify. I'm focused on creating accessible, user-friendly digital experiences.
@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
               enableMobileTilt={false}
               onContactClick={() => console.log('Contact clicked')}
               className=""
-              behindGradient={false}
+              behindGradient=""
             />
           </div>
         </div>
