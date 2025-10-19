@@ -20,6 +20,7 @@ export default function Home() {
                 <meta property="og:description" content="Experienced web developer specializing in custom WordPress and Shopify themes. Let's build user-friendly and accessible digital experiences together." />
                 <meta property="og:type" content="website" />
                 <meta name="robots" content="index, follow" />
+                <meta name="google-site-verification" content="mjAiERhDYv_MY46wKvn2O-qgJLvLJZe32EvmnRA_vvo" />
             </Head>
             <div className="bg-[#000000]">
                 <Header />
