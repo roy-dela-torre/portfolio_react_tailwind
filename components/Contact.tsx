@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image';
 const Contact: React.FC = () => {
   return (
     <section id="contact" className="wrapper mx-auto ">
@@ -13,9 +13,11 @@ const Contact: React.FC = () => {
         {/* Left Column: Info */}
         <div className="w-full lg:w-5/12 lg:pe-10">
           <div className="flex flex-col items-center text-center h-full">
-            <img 
-              src="/assets/img/profile.png" 
-              alt="Roy De La Torre" 
+            <Image
+              src="/assets/img/profile.png"
+              alt="Roy De La Torre"
+              width={200}
+              height={200}
               className="w-100 h-100 rounded-full object-cover mb-6 border-4 border-slate-700 object-top"
             />
             <h3 className="text-2xl font-bold text-slate-100">Roy De La Torre</h3>

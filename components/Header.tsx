@@ -10,6 +10,8 @@ const Header: React.FC = () => {
     { href: '#contact', label: 'Contact' },
   ];
 
+  
+
   return (
     <header className="sticky top-0 z-50 bg-slate-900/30 backdrop-blur-lg border-b border-slate-800">
       <nav className="wrapper mx-auto px-6 py-4 flex justify-between items-center">
