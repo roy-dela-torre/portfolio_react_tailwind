@@ -1294,16 +1294,16 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
           select-none
           absolute
           font-black
-          [font-size:4rem]
+          [font-size:40px]
           transform
           transition-all
           ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
           top-0
-          ${
-            isMoving
-              ? "opacity-0 pointer-events-none duration-[100ms]"
-              : "opacity-100 pointer-events-auto duration-[500ms]"
-          }
+          text-white
+          ${isMoving
+                ? "opacity-0 pointer-events-none duration-[100ms]"
+                : "opacity-100 pointer-events-auto duration-[500ms]"
+              }
         `}
           >
             {activeItem.title}
@@ -1318,12 +1318,12 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
           ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
           bottom-0
           left-0
+          text-white
           right-auto
-          ${
-            isMoving
-              ? "opacity-0 pointer-events-none duration-[100ms]"
-              : "opacity-100 pointer-events-auto duration-[500ms]"
-          }
+          ${isMoving
+                ? "opacity-0 pointer-events-none duration-[100ms]"
+                : "opacity-100 pointer-events-auto duration-[500ms]"
+              }
         `}
           >
             {activeItem.description}
@@ -1346,11 +1346,10 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
           cursor-pointer
           transition-all
           ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
-          ${
-            isMoving
-              ? "bottom-[-80px] opacity-0 pointer-events-none duration-[100ms] scale-0 -translate-x-1/2"
-              : "bottom-[3.8em] opacity-100 pointer-events-auto duration-[500ms] scale-100 -translate-x-1/2"
-          }
+          ${isMoving
+                ? "bottom-[-80px] opacity-0 pointer-events-none duration-[100ms] scale-0 -translate-x-1/2"
+                : "bottom-[3.8em] opacity-100 pointer-events-auto duration-[500ms] scale-100 -translate-x-1/2"
+              }
         `}
           >
             <p className="select-none relative text-[#060010] top-[2px] text-[26px]">

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+section {
+    @apply px-[30px] xl:py-[100px] lg:py-[70px] py-[50px] max-w-[1366px];
+}
+.wrapper{
+    @apply max-w-[1366px];
+}

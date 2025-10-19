@@ -1,4 +1,4 @@
-import ProfileCard from '@/reacbits/ProfileCard';
+import ProfileCard from '@/reacbits/ProfileCard/ProfileCard';
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 
 const Hero: React.FC = () => {
@@ -41,9 +41,9 @@ const Hero: React.FC = () => {
 
 
   return (
-    <section className="wrapper mx-auto flex items-center min-h-screen -mt-20">
-      <div className="flex items-center justify-between w-full flex-wrap gap-y-[50px]">
-        <div className="w-full lg:w-6/12">
+    <section className="container mx-auto flex flex-col items-center justify-center">
+      <div className="flex items-center flex-wrap w-full">
+        <div className="w-full md:w-7/12 md:pe-10">
           <p className="text-lg text-cyan-400 mb-4 font-mono">Hi, my name is</p>
           <h1 className="text-4xl md:text-7xl font-bold text-slate-100 mb-4">
             Roy De La Torre.
@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
             enableTilt={true}
             enableMobileTilt={false}
             onContactClick={() => console.log('Contact clicked')}
-            className="block lg:hidden mb-8 w-full"
+            className="block md:hidden mb-8"
             behindGradient=""
           />
           <p className="text-lg max-w-xl text-slate-400 mb-8">
@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
             </a>
           </div>
         </div>
-        <div className="w-full lg:w-6/12 lg:ps-10 hidden lg:block">
+        <div className="w-full md:w-5/12 lg:ps-10 hidden md:block">
           <div className="image">
             <ProfileCard
               name="Roy De La Torre"

@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
-import './css/ProfileCard.css';
-
 interface ProfileCardProps {
   avatarUrl: string;
   iconUrl?: string;
@@ -278,8 +276,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   }, [onContactClick]);
 
   return (
-    <div ref={wrapRef} className={`pc-card-wrapper ${className}`.trim()} style={cardStyle}>
-      <section ref={cardRef} className="pc-card p-0 ml-auto">
+    <div ref={wrapRef} className= {`pc-card-wrapper ${className}`.trim()} style={cardStyle}>
+      <section ref={cardRef} className="pc-card p-0! ml-auto w-full">
         <div className="pc-inside">
           <div className="pc-shine" />
           <div className="pc-glare" />
