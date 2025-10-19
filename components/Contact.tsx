@@ -9,10 +9,10 @@ const Contact: React.FC = () => {
         <span className="h-px bg-slate-600 flex-grow ml-4"></span>
       </h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+      <div className="flex flex-wrap gap-y-[50px]">
         {/* Left Column: Info */}
-        <div className="lg:col-span-2 bg-slate-800/30 backdrop-blur-lg border border-slate-700 p-8 rounded-lg shadow-lg h-full">
-          <div className="flex flex-col items-center text-center">
+        <div className="w-full lg:w-5/12 lg:pe-10">
+          <div className="flex flex-col items-center text-center h-full">
             <img 
               src="/assets/img/profile.png" 
               alt="Roy De La Torre" 
@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Right Column: Form */}
-        <div className="lg:col-span-3">
+        <div className="w-full lg:w-7/12 lg:ps-10">
           {/* IMPORTANT: Replace YOUR_FORM_ID with your actual Formspree endpoint */}
           <form action="https://formspree.io/f/movkbjan" method="POST" className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
