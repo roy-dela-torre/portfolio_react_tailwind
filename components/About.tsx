@@ -1,3 +1,4 @@
+import ElectricBorder from '@/reacbits/ElectricBorder/ElectricBorder';
 import React from 'react';
 
 const About: React.FC = () => {
@@ -8,7 +9,15 @@ const About: React.FC = () => {
       <h2 className="text-3xl font-bold text-slate-100 mb-8 flex items-center">
         <span className="text-cyan-400 font-mono mr-2 text-2xl">01.</span>
         About Me
-        <span className="h-px bg-slate-600 flex-grow ml-4"></span>
+        <ElectricBorder
+          color="#00BFFF"
+          speed={1}
+          chaos={0.5}
+          thickness={2}
+          style={{ borderRadius: 16 }}
+          className='w-full border-top'
+        >
+        </ElectricBorder>
       </h2>
       <div className="grid grid-cols-1">
         <div className="text-slate-400 space-y-4 text-lg">

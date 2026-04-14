@@ -12,6 +12,56 @@ dist
 dist-ssr
 *.local
 
+# Build output
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env files
+.env*
+
+# VSCode
+.vscode/
+!.vscode/extensions.json
+
+# Misc
+*.sublime-workspace
+*.sublime-project
+
+# Production
+*.log
+
+# Ignore Mac system files
+Icon?
+
+# Ignore Windows system files
+Desktop.ini
+
+# Ignore test coverage
+coverage/
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore static export cache
+.cache/
+
+# Ignore cPanel and FTP temp files
+*.ftpquota
+
+# Ignore htaccess temp
+.htaccess
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore public asset cache
+public/assets/img/cache/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -28,3 +78,6 @@ dist-ssr
 
 # Next.js build output
 .next
+*.zip
+
+*out/

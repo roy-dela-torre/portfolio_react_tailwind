@@ -1,6 +1,7 @@
+import ShinyText from '@/reacbits/ShinyText/ShinyText';
 import React from 'react';
-
-const wordpressServices = [
+import ElectricBorder from '@/reacbits/ElectricBorder/ElectricBorder';
+const wordpressServices: Array<{ title: string; description: string }> = [
   {
     title: 'Theme Development',
     description: 'Creating custom WordPress themes from scratch or modifying existing ones to meet client requirements.',
@@ -8,6 +9,18 @@ const wordpressServices = [
   {
     title: 'Customization',
     description: 'Customizing WordPress websites, themes, and plugins to align with client branding and design preferences.',
+  },
+  {
+    title: 'Custom Theme Development',
+    description: 'Build unique WordPress websites using custom themes tailored to your brand and business needs.',
+  },
+  {
+    title: 'Static Websites',
+    description: 'Fast, secure, and easy-to-manage static WordPress sites for portfolios, landing pages, and small businesses.',
+  },
+  {
+    title: 'Dynamic Websites',
+    description: 'Fully dynamic WordPress solutions for blogs, e-commerce, membership, and complex business logic.',
   },
   {
     title: 'Website Maintenance',
@@ -39,14 +52,18 @@ const wordpressServices = [
   }
 ];
 
-const shopifyServices = [
+const shopifyServices: Array<{ title: string; description: string }> = [
   {
     title: 'Theme Customization',
-    description: 'Customizing Shopify themes to match client branding and design requirements, including layout adjustments, styling changes, and adding custom features.',
+    description: 'Tailoring Shopify themes to perfectly match client branding and design visions. This includes deep layout adjustments using Liquid, advanced CSS styling, and adding custom features with JavaScript. All customizations are fully responsive, ensuring a seamless user experience across all devices, from desktop to mobile.',
   },
   {
     title: 'Store Setup',
-    description: 'Setting up Shopify stores, configuring settings, adding products, organizing collections, and setting up payment gateways and shipping options.',
+    description: 'Expertly setting up new Shopify stores by configuring core settings, adding and managing products, and structuring intuitive collections. This service includes the full integration of payment gateways and the establishment of diverse shipping options, ensuring your e-commerce store is fully operational and ready for business.',
+  },
+  {
+    title: 'Custom Theme Development',
+    description: 'Design and develop custom Shopify themes for a unique, branded e-commerce experience.',
   },
   {
     title: 'Integration',
@@ -63,10 +80,25 @@ const shopifyServices = [
 ];
 
 const ServiceCard: React.FC<{ title: string; description: string }> = ({ title, description }) => (
-  <div className="bg-slate-800/30 backdrop-blur-lg border border-slate-700 p-6 rounded-lg shadow-lg hover:shadow-cyan-500/10 transition-shadow duration-300 h-full">
-    <h4 className="font-bold text-slate-100 mb-2 text-lg">{title}</h4>
-    <p className="text-slate-400">{description}</p>
+
+  <div className="h-full p-6 border border-slate-700 rounded-lg bg-gradient-to-br from-slate-800 via-slate-900 to-black shadow-lg hover:shadow-2xl transition-shadow duration-300">
+    <h4 className="font-bold text-slate-100 mb-2 text-lg">
+      <ShinyText
+        text={title}
+        disabled={false}
+        speed={3}
+        className='text-white'
+      />
+    </h4>
+    <ShinyText
+      text={description}
+      disabled={false}
+      speed={3}
+      className='text-white'
+    />
   </div>
+
+
 );
 
 
@@ -76,7 +108,15 @@ const Services: React.FC = () => {
       <h2 className="text-3xl font-bold text-slate-100 mb-12 flex items-center">
         <span className="text-cyan-400 font-mono mr-2 text-2xl">02.</span>
         What I Do
-        <span className="h-px bg-slate-600 flex-grow ml-4"></span>
+        <ElectricBorder
+          color="#00BFFF"
+          speed={1}
+          chaos={0.5}
+          thickness={2}
+          style={{ borderRadius: 16 }}
+          className='w-full border-top'
+        >
+        </ElectricBorder>
       </h2>
 
       <div className="space-y-16">
@@ -91,10 +131,22 @@ const Services: React.FC = () => {
 
         <div>
           <h3 className="text-2xl font-bold text-slate-200 mb-8 text-center">Shopify Development</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {shopifyServices.map((service) => (
-              <ServiceCard key={service.title} title={service.title} description={service.description} />
-            ))}
+          <div className="flex flex-col lg:grid lg:grid-cols-4 grid-rows-6 gap-5">
+            <div className="col-span-2 row-span-3">
+              <ServiceCard {...shopifyServices[0]} />
+            </div>
+            <div className="col-span-2 row-span-3 col-start-1 row-start-4">
+              <ServiceCard {...shopifyServices[1]} />
+            </div>
+            <div className="col-span-2 row-span-2 col-start-3 row-start-1">
+              <ServiceCard {...shopifyServices[2]} />
+            </div>
+            <div className="col-span-2 row-span-2 col-start-3 row-start-3">
+              <ServiceCard {...shopifyServices[3]} />
+            </div>
+            <div className="col-span-2 row-span-2 col-start-3 row-start-5">
+              <ServiceCard {...shopifyServices[4]} />
+            </div>
           </div>
         </div>
       </div>

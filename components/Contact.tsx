@@ -1,32 +1,50 @@
 import React from 'react';
 import Image from 'next/image';
+import ElectricBorder from '@/reacbits/ElectricBorder/ElectricBorder';
 const Contact: React.FC = () => {
   return (
     <section id="contact" className="wrapper mx-auto ">
       <h2 className="text-3xl font-bold text-slate-100 mb-12 flex items-center">
         <span className="text-cyan-400 font-mono mr-2 text-2xl">04.</span>
         Contact Me
-        <span className="h-px bg-slate-600 flex-grow ml-4"></span>
+        <ElectricBorder
+          color="#00BFFF"
+          speed={1}
+          chaos={0.5}
+          thickness={2}
+          style={{ borderRadius: 16 }}
+          className='w-full border-top'
+        >
+        </ElectricBorder>
       </h2>
 
       <div className="flex flex-wrap gap-y-[50px]">
         {/* Left Column: Info */}
         <div className="w-full lg:w-5/12 lg:pe-10">
           <div className="flex flex-col items-center text-center h-full">
-            <Image
-              src="/assets/img/profile.png"
-              alt="Roy De La Torre"
-              width={200}
-              height={200}
-              className="w-100 h-100 rounded-full object-cover mb-6 border-4 border-slate-700 object-top"
-            />
+            <ElectricBorder
+              color="#00BFFF"
+              speed={1}
+              chaos={0.5}
+              thickness={2}
+              style={{ borderRadius: 16 }}
+              className='rounded-full! mb-6'
+            >
+              <Image
+                src="/assets/img/profile.png"
+                alt="Roy De La Torre"
+                width={200}
+                height={200}
+                className="w-100 h-100 rounded-full object-cover border-4 object-top"
+              />
+            </ElectricBorder>
             <h3 className="text-2xl font-bold text-slate-100">Roy De La Torre</h3>
             <p className="text-cyan-400 mb-4">WordPress/Shopify Developer</p>
             <p className="text-slate-400 mb-4">
               I am available for freelance work. Connect with me via and call in to my account.
             </p>
             <div className="font-mono text-slate-300">
-              Phone: 09533466561
+              Phone: <a href="tel:+639533466561">09533466561</a>
             </div>
           </div>
         </div>
