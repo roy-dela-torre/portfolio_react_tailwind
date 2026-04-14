@@ -18,6 +18,7 @@ interface ProfileCardProps {
   contactText?: string;
   showUserInfo?: boolean;
   onContactClick?: () => void;
+  fetchPriority?: 'high' | 'low' | 'auto';
 }
 
 const DEFAULT_BEHIND_GRADIENT =
@@ -60,7 +61,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   status = 'Online',
   contactText = 'Contact',
   showUserInfo = true,
-  onContactClick
+  onContactClick,
+  fetchPriority = 'auto'
 }) => {
   const wrapRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -276,8 +278,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   }, [onContactClick]);
 
   return (
-    <div ref={wrapRef} className= {`pc-card-wrapper ${className}`.trim()} style={cardStyle}>
-      <section ref={cardRef} className="pc-card p-0! ml-auto w-full">
+    <div ref={wrapRef} className={`pc-card-wrapper ${className}`.trim()} style={cardStyle}>
+      <section ref={cardRef} className={`pc-card p-0! ml-auto w-full${!enableTilt ? ' pc-no-tilt' : ''}`}>
         <div className="pc-inside">
           <div className="pc-shine" />
           <div className="pc-glare" />
@@ -286,7 +288,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
               className="avatar"
               src={avatarUrl}
               alt={`${name || 'User'} avatar`}
-              loading="lazy"
+              loading={fetchPriority === 'high' ? 'eager' : 'lazy'}
+              fetchPriority={fetchPriority}
               onError={e => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';

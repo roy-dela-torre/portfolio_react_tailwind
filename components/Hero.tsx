@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
             contactText="Contact Me"
             avatarUrl="/assets/img/profile.png"
             showUserInfo={true}
-            enableTilt={true}
+            enableTilt={false}
             enableMobileTilt={false}
             onContactClick={() => console.log('Contact clicked')}
             className="block md:hidden mb-8"
@@ -96,11 +96,12 @@ const Hero: React.FC = () => {
               contactText="Contact Me"
               avatarUrl="/assets/img/profile.png"
               showUserInfo={true}
-              enableTilt={true}
+              enableTilt={false}
               enableMobileTilt={false}
-              onContactClick={() => console.log('Contact clicked')}
+              onContactClick={() => window.location.href = '#contact'}
               className=""
               behindGradient=""
+              fetchPriority="high"
             />
           </div>
         </div>

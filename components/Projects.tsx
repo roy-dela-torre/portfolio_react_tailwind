@@ -2,6 +2,7 @@ import React from 'react';
 import { PROJECTS } from '../constants';
 // import ProjectCard from './ProjectCard'; // No longer needed
 import InfiniteMenu from '../reacbits/InfiniteMenu/InfiniteMenu'; // Import the new component
+import ElectricBorder from '@/reacbits/ElectricBorder/ElectricBorder';
 
 const Projects: React.FC = () => {
   // 1. Transform your PROJECTS data into the format InfiniteMenu needs
@@ -25,7 +26,15 @@ const Projects: React.FC = () => {
       <h2 className="text-3xl font-bold text-slate-100 mb-8 flex items-center">
         <span className="text-cyan-400 font-mono mr-2 text-2xl">03.</span>
         Some Things I've Built
-        <span className="h-px bg-slate-600 flex-grow ml-4"></span>
+        <ElectricBorder
+          color="#00BFFF"
+          speed={1}
+          chaos={0.5}
+          thickness={2}
+          style={{ borderRadius: 16 }}
+          className='w-full border-top'
+        >
+        </ElectricBorder>
       </h2>
 
       {/* 2. Replace the grid with the InfiniteMenu wrapper and component */}
