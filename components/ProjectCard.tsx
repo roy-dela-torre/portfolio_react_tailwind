@@ -1,40 +1,32 @@
-import React from 'react';
-import { Project } from '../types';
-import { ExternalLinkIcon } from './icons/Icons';
+import Image from "next/image";
+import type { Project } from "@/data/content";
 
-interface ProjectCardProps {
-  project: Project;
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+export default function ProjectCard({ title, description, imageUrl, liveUrl }: Project) {
   return (
-    <a 
-      href={project.liveUrl} 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="block bg-slate-800/30 backdrop-blur-lg border border-slate-700 rounded-lg overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 group"
-      aria-label={`View live demo of ${project.title}`}
-    >
-      <article className="flex flex-col h-full">
-        <div className="overflow-hidden">
-          <img
-            src={project.imageUrl}
-            alt={project.title}
-            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+    <article className="group overflow-hidden rounded-2xl border border-white/10 transition-transform duration-300 hover:-translate-y-1">
+      <a
+        href={liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`View the live ${title} project (opens in a new tab)`}
+        className="block"
+      >
+        <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
+          <Image
+            src={imageUrl}
+            alt={`Screenshot of the ${title} website homepage`}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
-        <div className="p-6 flex flex-col flex-grow">
-          <div className="flex justify-between items-start mb-4">
-            <h3 className="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">
-              {project.title}
-            </h3>
-            <ExternalLinkIcon className="w-6 h-6 text-slate-400 group-hover:text-cyan-400 transition-colors flex-shrink-0" />
-          </div>
-          <p className="text-slate-400 mb-4 flex-grow">{project.description}</p>
+        <div className="p-6">
+          <h3 className="text-lg font-semibold text-white transition-colors group-hover:text-accent">
+            {title}
+          </h3>
+          <p className="mt-2 text-sm leading-relaxed text-white/60">{description}</p>
         </div>
-      </article>
-    </a>
+      </a>
+    </article>
   );
-};
-
-export default ProjectCard;
+}
