@@ -43,7 +43,6 @@ export const navLinks = [
   { label: "Process", href: "/process" },
   { label: "Projects", href: "/projects" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export const sitemapLinks = [
@@ -105,22 +104,29 @@ export type ExperienceEntry = {
 export const experience: ExperienceEntry[] = [
   {
     company: "Clarvida Global Business Center",
-    role: "Web Developer / SEO Specialist",
-    dates: "May 2026 — Present",
+    role: "Web Developer",
+    dates: "May 5, 2026 — Present",
     description:
       "Building and maintaining custom WordPress sites while leading on-page and technical SEO to grow organic traffic.",
   },
   {
-    company: "FMO Media",
-    role: "Web Developer (agency projects)",
-    dates: "Jan 2022 — Jul 2022",
+    company: "Teqon Web Solutions B.V.",
+    role: "WordPress Developer (Part-time)",
+    dates: "Nov 2025 — Feb 2026",
     description:
-      "Developed custom WordPress themes and landing pages for agency clients across multiple industries.",
+      "Built and maintained WordPress sites for a Rotterdam, Netherlands-based agency, working fully remote on site builds and WordPress development.",
   },
+  // {
+  //   company: "FMO Media",
+  //   role: "Web Developer (agency projects)",
+  //   dates: "Jan 2022 — Jul 2022",
+  //   description:
+  //     "Developed custom WordPress themes and landing pages for agency clients across multiple industries.",
+  // },
   {
     company: "SEO Hacker",
     role: "Web Client Success Engineer",
-    dates: "Aug 2022 — Dec 2025",
+    dates: "Aug 1, 2022 — Dec 5, 2025",
     description:
       "Managed technical SEO implementation and WordPress development for client accounts, translating audits into shipped fixes.",
   },
@@ -577,3 +583,76 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
     ],
   },
 };
+
+// PLACEHOLDER — every name, role pairing, website, and social link below is
+// a template stand-in. Replace with real people, real URLs, and swap
+// TeamAvatarPlaceholder for a real next/image photo per person before this
+// page is linked from anywhere public.
+export type TeamMember = {
+  name: string;
+  role: string;
+  website: string;
+  socials: {
+    linkedin?: string;
+    twitter?: string;
+    instagram?: string;
+    github?: string;
+  };
+};
+
+export const teamMembers: TeamMember[] = [
+  {
+    name: "Maria Santos",
+    role: "Designer",
+    website: "https://example.com",
+    socials: { linkedin: "#", instagram: "#" },
+  },
+  {
+    name: "Carlo Reyes",
+    role: "Account Manager",
+    website: "https://example.com",
+    socials: { linkedin: "#" },
+  },
+  {
+    name: "Angela Cruz",
+    role: "SEO Specialist",
+    website: "https://example.com",
+    socials: { linkedin: "#", twitter: "#" },
+  },
+  {
+    name: "Miguel Torres",
+    role: "Project Manager",
+    website: "https://example.com",
+    socials: { linkedin: "#" },
+  },
+  {
+    name: "Diego Ramos",
+    role: "Backlinks/Outreach Specialist",
+    website: "https://example.com",
+    socials: { linkedin: "#", twitter: "#" },
+  },
+  {
+    name: "Patricia Lim",
+    role: "Accountant",
+    website: "https://example.com",
+    socials: { linkedin: "#" },
+  },
+  {
+    name: "Sophia Garcia",
+    role: "Writer",
+    website: "https://example.com",
+    socials: { linkedin: "#", twitter: "#", instagram: "#" },
+  },
+  {
+    name: "Daniel Aquino",
+    role: "Developer",
+    website: "https://example.com",
+    socials: { linkedin: "#", github: "#" },
+  },
+  {
+    name: "Rafael Bautista",
+    role: "Developer",
+    website: "https://example.com",
+    socials: { linkedin: "#", github: "#" },
+  },
+];
