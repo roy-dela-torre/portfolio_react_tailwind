@@ -1,12 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navLinks, siteConfig } from "@/data/content";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -14,6 +17,8 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const isActive = (href: string) => !href.includes("#") && pathname === href;
 
   return (
     <header
@@ -25,20 +30,34 @@ export default function Navbar() {
         aria-label="Primary"
         className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5"
       >
-        <Link href="#top" className="text-lg font-semibold tracking-tight text-white">
-          {siteConfig.shortName}<span className="text-accent">.</span>
+        <Link href="/" aria-label={`${siteConfig.name} — Home`} className="block">
+          <Image
+            src="/assets/img/favicon.png"
+            alt=""
+            width={36}
+            height={36}
+            className="h-9 w-9 rounded-full"
+            priority
+          />
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
-                className="group relative text-sm text-white/80 transition-colors hover:text-white"
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`group relative text-sm transition-colors ${
+                  isActive(link.href) ? "text-white" : "text-white/80 hover:text-white"
+                }`}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-accent transition-transform duration-300 group-hover:scale-x-100" />
-              </a>
+                <span
+                  className={`absolute -bottom-1 left-0 h-px w-full origin-left bg-accent transition-transform duration-300 ${
+                    isActive(link.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
+              </Link>
             </li>
           ))}
         </ul>
@@ -75,13 +94,16 @@ export default function Navbar() {
         >
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block py-3 text-base text-white/80 transition-colors hover:text-white"
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`block py-3 text-base transition-colors ${
+                  isActive(link.href) ? "text-accent" : "text-white/80 hover:text-white"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li>

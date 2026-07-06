@@ -14,12 +14,12 @@ export default function Experience() {
   const hasMore = experience.length > VISIBLE_COUNT;
 
   return (
-    <section id="experience" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+    <section className="mx-auto max-w-6xl px-6 pb-24 pt-32 md:pb-32 md:pt-40">
       <Reveal stagger={false}>
         <SectionLabel>Work History</SectionLabel>
-        <h2 className="mb-12 text-3xl font-bold tracking-tight text-white md:text-5xl">
+        <h1 className="mb-12 text-3xl font-bold tracking-tight text-white md:text-5xl">
           Where I&apos;ve worked
-        </h2>
+        </h1>
       </Reveal>
 
       <Reveal>

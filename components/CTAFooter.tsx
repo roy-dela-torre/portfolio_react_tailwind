@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { FaEnvelope } from "react-icons/fa";
-import { cta, siteConfig, socialLinks } from "@/data/content";
+import { cta, siteConfig, sitemapLinks, socialLinks } from "@/data/content";
 import ObfuscatedEmailLink from "./ObfuscatedEmailLink";
 import Reveal from "./Reveal";
 
@@ -52,7 +53,22 @@ export default function CTAFooter() {
           </li>
         </ul>
 
-        <p className="mt-14 text-sm text-white/60">
+        <nav aria-label="Sitemap" className="mt-14 border-t border-white/10 pt-10">
+          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            {sitemapLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-sm text-white/60 transition-colors hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <p className="mt-10 text-sm text-white/60">
           &copy; {year} {siteConfig.name}. All rights reserved.
         </p>
       </div>
