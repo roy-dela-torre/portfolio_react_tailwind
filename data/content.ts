@@ -29,7 +29,7 @@ export const siteConfig = {
   description:
     "Roy De La Torre is a WordPress developer and SEO specialist based in the Philippines, building fast, accessible, custom WordPress and WooCommerce sites and driving organic growth through technical SEO.",
   url: "https://roydetorre.com",
-  location: "Philippines",
+  location: "Metro Manila, Philippines",
   social: {
     linkedin: "https://www.linkedin.com/in/roy-dela-torre/",
     github: "https://github.com/roy-dela-torre",
@@ -37,6 +37,7 @@ export const siteConfig = {
 };
 
 export const navLinks = [
+  { label: "Services", href: "/#services" },
   { label: "Work", href: "/experience" },
   { label: "Skills", href: "/#skills" },
   { label: "Process", href: "/process" },
@@ -47,6 +48,8 @@ export const navLinks = [
 
 export const sitemapLinks = [
   { label: "Home", href: "/" },
+  { label: "WordPress Development", href: "/services/wordpress-development" },
+  { label: "SEO Services", href: "/services/seo" },
   { label: "Experience", href: "/experience" },
   { label: "Process", href: "/process" },
   { label: "Projects", href: "/projects" },
@@ -62,7 +65,7 @@ export const hero = {
   eyebrow: "Available for work",
   headingLines: ["A WordPress developer", "& SEO specialist"],
   paragraph:
-    "I'm a WordPress developer and SEO specialist who designs and builds custom WordPress themes and WooCommerce stores, then optimizes them with technical SEO so they actually get found. Based in the Philippines, I partner with agencies and businesses to ship fast, accessible, search-friendly sites.",
+    "I'm a WordPress developer and SEO specialist who designs and builds custom WordPress themes and WooCommerce stores, then optimizes them with technical SEO so they actually get found. Based in Metro Manila, Philippines, I partner with local and international clients to ship fast, accessible, search-friendly sites.",
   resumeLabel: "My Resume",
   resumeHref: "/resume.pdf",
 };
@@ -388,4 +391,189 @@ export const rating = {
   score: 5.0,
   maxScore: 5,
   label: "Client Satisfaction",
+};
+
+// DRAFT copy — review before relying on it for anything besides the
+// homepage Services section. Descriptions are first-person and honest based
+// on the real skills/experience/pricing already in this file.
+export type Service = {
+  slug: string;
+  title: string;
+  description: string;
+  href: string;
+};
+
+export const services: Service[] = [
+  {
+    slug: "wordpress-development",
+    title: "WordPress Development",
+    description:
+      "As a WordPress developer in the Philippines, I design and build custom WordPress websites for local and international clients — from simple business sites to WooCommerce stores. I write clean, maintainable code using ACF and custom themes, not just page-builder templates, so your site stays fast and easy to manage long after launch.",
+    href: "/services/wordpress-development",
+  },
+  {
+    slug: "seo",
+    title: "SEO Services",
+    description:
+      "As an SEO specialist, I help your WordPress site actually get found — through technical SEO audits, on-page optimization, and fixes that improve Core Web Vitals and search visibility. I use tools like Yoast SEO, Google Search Console, and Screaming Frog to find what's holding your site back and fix it.",
+    href: "/services/seo",
+  },
+  {
+    slug: "maintenance",
+    title: "Website Maintenance & Support",
+    description:
+      "Launch day isn't the finish line. I offer ongoing WordPress maintenance and support — updates, backups, security monitoring, and small fixes — so your site stays fast, secure, and online. Pricing for this is on my rate card, alongside everything else I offer.",
+    href: "/pricing",
+  },
+];
+
+export type FaqEntry = {
+  question: string;
+  answer: string;
+  link?: { label: string; href: string };
+};
+
+// DRAFT answers, written honestly from the real experience/pricing data in
+// this file. The one exception is the timeline question below — that range
+// is a reasonable estimate, not a quoted commitment.
+export const homepageFaqs: FaqEntry[] = [
+  {
+    question: "How much does a WordPress website cost in the Philippines?",
+    answer:
+      "It depends on scope, but here's a general idea from my own rate card: a landing page runs $300–600, a standard business site with a page builder is $600–1,500, and a custom WordPress theme with ACF starts around $1,500–4,000. WooCommerce stores and full site migrations run higher depending on complexity.",
+    link: { label: "See the full rate card", href: "/pricing" },
+  },
+  {
+    question: "What are your rates — hourly or per project?",
+    answer:
+      "Both, depending on the engagement. For ongoing or part-time work I bill hourly — ₱500–900/hr for local clients, $15–30/hr for international clients direct, or $8–15/hr through platforms like Upwork. For a defined website build, I usually quote a flat per-project rate instead, since it's easier for you to budget around.",
+    link: { label: "See the full rate card", href: "/pricing" },
+  },
+  {
+    question: "Do you work with Elementor / page builders or custom themes?",
+    answer:
+      "Both. I build with Elementor Pro and Divi for clients who want a faster turnaround or a smaller budget, and fully custom WordPress themes with ACF for clients who want something more tailored and performant. I'll tell you honestly which one fits your project instead of upselling you into the more expensive option.",
+  },
+  {
+    question: "How do I know you're a reliable developer?",
+    answer:
+      "The most honest way is to look at the actual work — my portfolio has real, mostly-still-live client sites, not mockups, so you can see what I've shipped. I also follow the same documented five-step process on every project, so you know what to expect at each stage instead of guessing.",
+    link: { label: "See my projects", href: "/projects" },
+  },
+  {
+    // TODO(Roy): confirm these are the timelines you actually quote clients.
+    question: "How long does it take to build a WordPress website?",
+    answer:
+      "Most standard WordPress business sites take about 2–4 weeks from kickoff to launch, depending on how quickly I get content and feedback from you. Landing pages can be faster, often under a week, while custom builds with ACF or WooCommerce stores typically take 4–8 weeks.",
+  },
+  {
+    question: "Do you work with international clients or only in the Philippines?",
+    answer:
+      "Both. I work with clients across the Philippines as well as internationally, mostly in the US, Australia, and the UK. I'm based in Metro Manila, so a lot of my client calls happen in the evening Philippine time to line up with US business hours, but that's never been a blocker for a good working relationship.",
+  },
+  {
+    question: "Do you offer maintenance and support after launch?",
+    answer:
+      "Yes — ongoing maintenance and support after launch, including plugin and core updates, backups, uptime monitoring, and small content or bug fixes. It's available as a monthly retainer, so you're not stuck troubleshooting problems on your own once the site is live.",
+    link: { label: "View maintenance pricing", href: "/pricing" },
+  },
+];
+
+export type ServiceDetailData = {
+  slug: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  h1: string;
+  intro: string;
+  whatsIncluded: string[];
+  faqs: FaqEntry[];
+};
+
+// DRAFT copy for the two dedicated service pages. Honest based on real
+// skills/pricing in this file, except the SEO timeline question (flagged
+// below), which is an estimate.
+export const serviceDetails: Record<string, ServiceDetailData> = {
+  "wordpress-development": {
+    slug: "wordpress-development",
+    title: "WordPress Development",
+    metaTitle: "WordPress Development Services Philippines | Roy De La Torre",
+    metaDescription:
+      "WordPress developer in the Philippines building custom themes, WooCommerce stores, and site migrations for local and international clients.",
+    h1: "WordPress Development Services in the Philippines",
+    intro:
+      "I'm Roy De La Torre, a WordPress developer based in Metro Manila, Philippines. I build custom WordPress websites for businesses that want a site that's fast, easy to manage, and actually built around how they work, not a generic template stretched to fit.",
+    whatsIncluded: [
+      "Custom WordPress theme development with ACF, for clients who want something fully tailored",
+      "Elementor Pro and Divi builds, for clients who want a faster turnaround or a smaller budget",
+      "Advanced Custom Fields (ACF) flexible content for easy content management",
+      "WooCommerce store setup and customization",
+      "Site migrations and rebuilds, including CRM integrations and DNS/SSL cutover",
+      "Ongoing WordPress maintenance and support",
+    ],
+    faqs: [
+      {
+        question: "Do you build with page builders like Elementor or Divi, or custom code?",
+        answer:
+          "Both — it depends on your budget and needs. I build fully custom WordPress themes with ACF for clients who want a unique, fast, easy-to-maintain site, but I also work with Elementor Pro and Divi for smaller budgets or faster turnarounds. I'll recommend whichever fits your project honestly.",
+      },
+      {
+        question: "Can you redesign my existing WordPress site instead of starting from scratch?",
+        answer:
+          "Yes. I can redesign or rebuild an existing WordPress site without necessarily losing your content, URLs, or SEO rankings — I map out what needs to carry over before I touch anything.",
+      },
+      {
+        question: "Do you build WooCommerce stores?",
+        answer:
+          "Yes, WooCommerce store setup and customization is part of what I do — product catalogs, payment gateways, shipping rules, and store performance tuning.",
+      },
+      {
+        question: "What do I need to provide to get started?",
+        answer:
+          "Just your content (or a plan for getting it), your goals for the site, and any brand assets like a logo. I'll help you fill in gaps in strategy and content structure along the way.",
+        link: { label: "See my process", href: "/process" },
+      },
+    ],
+  },
+  seo: {
+    slug: "seo",
+    title: "SEO Services",
+    metaTitle: "SEO Services Philippines | Roy De La Torre — SEO Specialist",
+    metaDescription:
+      "SEO specialist in the Philippines offering technical SEO audits, on-page optimization, and Core Web Vitals fixes for WordPress and custom sites.",
+    h1: "SEO Services in the Philippines",
+    intro:
+      "I'm Roy De La Torre, an SEO specialist based in Metro Manila, Philippines. I help WordPress and custom-built sites get found through technical fixes, on-page optimization, and the same Core Web Vitals work I apply to my own projects.",
+    whatsIncluded: [
+      "Technical SEO audits (crawlability, indexing, site structure)",
+      "On-page SEO (titles, meta descriptions, header hierarchy, internal linking)",
+      "Core Web Vitals and page speed optimization",
+      "Structured data / schema markup implementation",
+      "Google Search Console setup and ongoing monitoring",
+    ],
+    faqs: [
+      {
+        question: "Do you only do SEO for WordPress sites?",
+        answer:
+          "No — most of my SEO work happens to be on WordPress sites since that's what I build, but the technical SEO process (audits, Core Web Vitals, structured data) applies to any site, WordPress or not.",
+      },
+      {
+        // TODO(Roy): confirm these are the timelines you actually quote clients.
+        question: "How long until I see SEO results?",
+        answer:
+          "Technical fixes like site speed and crawlability issues can show up in Search Console within weeks, but meaningful ranking movement for competitive keywords usually takes a few months. I don't promise overnight results — anyone who does is probably not being straight with you.",
+      },
+      {
+        question: "Do you do keyword research and content strategy, or just technical SEO?",
+        answer:
+          "My focus is technical SEO and on-page optimization — site structure, speed, schema, crawlability — rather than content writing or link building. I can point you toward what content gaps exist, but I'm not a full-service content agency.",
+      },
+      {
+        question: "Can you audit my site before I commit to anything?",
+        answer:
+          "Yes, that's usually how I start: a technical SEO audit up front so you know exactly what's wrong and what it'll take to fix, before committing to ongoing work.",
+        link: { label: "See audit pricing", href: "/pricing" },
+      },
+    ],
+  },
 };
