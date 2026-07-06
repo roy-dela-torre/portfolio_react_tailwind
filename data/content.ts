@@ -28,7 +28,7 @@ export const siteConfig = {
   title: "Roy De La Torre — WordPress Developer & SEO Specialist | Philippines",
   description:
     "Roy De La Torre is a WordPress developer and SEO specialist based in the Philippines, building fast, accessible, custom WordPress and WooCommerce sites and driving organic growth through technical SEO.",
-  url: "https://chuseikokoro.com",
+  url: "https://roydetorre.com",
   location: "Philippines",
   social: {
     linkedin: "https://www.linkedin.com/in/roy-dela-torre/",
@@ -37,11 +37,20 @@ export const siteConfig = {
 };
 
 export const navLinks = [
-  { label: "Work", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Process", href: "#process" },
-  { label: "Projects", href: "#projects" },
+  { label: "Work", href: "/experience" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Process", href: "/process" },
+  { label: "Projects", href: "/projects" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "#contact" },
+];
+
+export const sitemapLinks = [
+  { label: "Home", href: "/" },
+  { label: "Experience", href: "/experience" },
+  { label: "Process", href: "/process" },
+  { label: "Projects", href: "/projects" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 export const socialLinks = [
@@ -292,4 +301,91 @@ export const cta = {
   eyebrow: "Available for work",
   heading: "Let's create your next big idea.",
   buttonLabel: "Contact Me",
+};
+
+export type PricingTier = {
+  label: string;
+  rate: string;
+  note?: string;
+  highlight?: boolean;
+};
+
+export const pricing = {
+  intro:
+    "Rates depend on scope, client location, and engagement length. These ranges reflect the type of work in my portfolio — from landing pages to full CRM-integrated rebuilds.",
+  hourly: [
+    {
+      label: "Local PH Clients",
+      rate: "₱500–₱900/hr (~$9–16)",
+    },
+    {
+      label: "International Clients (US/AU/UK, direct)",
+      rate: "$15–30/hr",
+      note: "CRM integrations, serverless functions, and site migrations justify the upper end of this range.",
+    },
+    {
+      label: "Agencies / Platforms (Upwork, OnlineJobs.ph)",
+      rate: "$8–15/hr",
+      note: "Typical range for these platforms, priced above junior-level work.",
+    },
+  ] satisfies PricingTier[],
+  retainers: [
+    {
+      label: "Part-time (20 hrs/week), International",
+      rate: "$1,200–2,400/month (~₱68k–135k)",
+    },
+    {
+      label: "Part-time, PH-based Company",
+      rate: "₱25k–45k/month",
+    },
+    {
+      label: "Maintenance / Support Retainer, per Site",
+      rate: "$150–400/month",
+      note: "Updates, backups, security monitoring, and minor fixes.",
+    },
+  ] satisfies PricingTier[],
+  projects: [
+    {
+      label: "Landing Page / Temporary Homepage",
+      rate: "$300–600",
+    },
+    {
+      label: "Standard Business Site (Elementor/Divi)",
+      rate: "$600–1,500",
+    },
+    {
+      label: "Custom Theme with ACF Flexible Content",
+      rate: "$1,500–4,000",
+      note: "Custom-built themes, not page-builder templates.",
+      highlight: true,
+    },
+    {
+      label: "WooCommerce Store",
+      rate: "$1,500–5,000",
+    },
+    {
+      label: "Site Migration + Rebuild",
+      rate: "$2,000–5,000+",
+      note: "CRM integrations, DNS/SSL cutover, serverless forms.",
+    },
+    {
+      label: "Malware Cleanup + Hardening",
+      rate: "$300–800",
+    },
+    {
+      label: "Technical SEO Audit + Implementation",
+      rate: "$400–1,000",
+    },
+    {
+      label: "PageSpeed / Performance Optimization",
+      rate: "$250–600",
+    },
+  ] satisfies PricingTier[],
+};
+
+// Placeholder until a real rating/source (e.g. Upwork, Google) is available.
+export const rating = {
+  score: 5.0,
+  maxScore: 5,
+  label: "Client Satisfaction",
 };
