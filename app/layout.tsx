@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { headers } from "next/headers";
 import Navbar from "@/components/Navbar";
 import CTAFooter from "@/components/CTAFooter";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import SiteBackground from "@/components/SiteBackground";
 import { siteConfig } from "@/data/content";
 import "./globals.css";
@@ -80,6 +81,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           nonce={nonce}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        <GoogleAnalytics gaId={siteConfig.googleAnalyticsId} nonce={nonce} />
         <SiteBackground />
         <Navbar />
         <main>{children}</main>

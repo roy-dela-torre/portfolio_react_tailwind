@@ -30,6 +30,7 @@ export const siteConfig = {
     "Roy De La Torre is a WordPress developer and SEO specialist based in the Philippines, building fast, accessible, custom WordPress and WooCommerce sites and driving organic growth through technical SEO.",
   url: "https://roydetorre.com",
   location: "Metro Manila, Philippines",
+  googleAnalyticsId: "G-WDV14PZ98M",
   social: {
     linkedin: "https://www.linkedin.com/in/roy-dela-torre/",
     github: "https://github.com/roy-dela-torre",

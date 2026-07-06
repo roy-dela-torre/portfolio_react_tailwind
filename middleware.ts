@@ -13,9 +13,12 @@ export function middleware(request: NextRequest) {
 
   const csp = [
     "default-src 'self'",
-    scriptSrc,
+    // googletagmanager.com is explicitly allowlisted (in addition to the
+    // nonce) as a fallback for browsers that don't support strict-dynamic.
+    `${scriptSrc} https://www.googletagmanager.com`,
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data:",
+    "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com",
     "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",
