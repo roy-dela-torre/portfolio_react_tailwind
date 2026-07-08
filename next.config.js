@@ -24,6 +24,17 @@ if (process.env.VERCEL) {
   });
 }
 
+// The root layout reads headers() to stamp a per-request CSP nonce, which
+// opts pages into dynamic rendering. Next.js then streams <title>/<meta>
+// tags in after the initial <head> for any user agent it doesn't recognize
+// as an HTML-only bot, relying on client-side JS to relocate them — which
+// real browsers do, but non-JS crawlers (e.g. Screaming Frog) don't, so they
+// see titles/canonicals/meta description as "outside <head>". This extends
+// Next's default bot allowlist (which already covers Googlebot, Bingbot,
+// etc.) so SEO crawlers get the same blocking, non-streamed metadata.
+const htmlLimitedBots =
+  /[\w-]+-Google|Google-[\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight|Screaming Frog|AhrefsBot|SemrushBot|MJ12bot/i;
+
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -31,6 +42,7 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error"] } : false,
   },
+  htmlLimitedBots,
   experimental: {
     inlineCss: true,
   },
