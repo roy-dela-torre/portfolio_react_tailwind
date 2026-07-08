@@ -31,6 +31,9 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error"] } : false,
   },
+  experimental: {
+    inlineCss: true,
+  },
   async headers() {
     return [
       {

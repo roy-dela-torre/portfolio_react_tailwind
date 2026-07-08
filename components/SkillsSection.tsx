@@ -1,3 +1,4 @@
+import PerformanceHighlight from "./PerformanceHighlight";
 import Reveal from "./Reveal";
 import SectionLabel from "./SectionLabel";
 import SkillsMarquee from "./SkillsMarquee";
@@ -16,6 +17,10 @@ export default function SkillsSection() {
 
       <Reveal stagger={false}>
         <SkillsMarquee />
+      </Reveal>
+
+      <Reveal stagger={false}>
+        <PerformanceHighlight />
       </Reveal>
     </section>
   );

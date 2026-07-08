@@ -95,6 +95,34 @@ export const skills: { name: string; Icon: IconType }[] = [
   { name: "Vercel", Icon: SiVercel },
 ];
 
+export type PerformanceScore = {
+  device: string;
+  image: string;
+  performance: number;
+  accessibility: number;
+  bestPractices: number;
+  seo: number;
+};
+
+export const performanceScores: PerformanceScore[] = [
+  {
+    device: "Desktop",
+    image: "/assets/img/desktop.jpg",
+    performance: 100,
+    accessibility: 100,
+    bestPractices: 100,
+    seo: 100,
+  },
+  {
+    device: "Mobile",
+    image: "/assets/img/mobile.jpg",
+    performance: 98,
+    accessibility: 100,
+    bestPractices: 100,
+    seo: 100,
+  },
+];
+
 export type ExperienceEntry = {
   company: string;
   role: string;
