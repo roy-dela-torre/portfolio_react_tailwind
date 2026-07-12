@@ -1,13 +1,61 @@
+import { headers } from "next/headers";
 import Link from "next/link";
 import type { ServiceDetailData } from "@/data/content";
+import { parsePriceRange, pricing, serviceOfferLabels, siteConfig } from "@/data/content";
+import BreadcrumbJsonLd from "./BreadcrumbJsonLd";
 import FaqSection from "./FaqSection";
 import ObfuscatedEmailLink from "./ObfuscatedEmailLink";
 import Reveal from "./Reveal";
 import SectionLabel from "./SectionLabel";
 
-export default function ServiceDetail({ service }: { service: ServiceDetailData }) {
+export default async function ServiceDetail({ service }: { service: ServiceDetailData }) {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
+  const offers = (serviceOfferLabels[service.slug] ?? [])
+    .map((label) => pricing.projects.find((tier) => tier.label === label))
+    .filter((tier): tier is NonNullable<typeof tier> => tier !== undefined)
+    .map((tier) => {
+      const range = parsePriceRange(tier.rate);
+      return {
+        "@type": "Offer",
+        name: tier.label,
+        ...(range && {
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            minPrice: range.minPrice,
+            maxPrice: range.maxPrice,
+            priceCurrency: "USD",
+          },
+        }),
+      };
+    });
+
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.metaDescription,
+    provider: { "@id": `${siteConfig.url}/#person` },
+    areaServed: ["Philippines", "Worldwide"],
+    offers,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        nonce={nonce}
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/#services" },
+          { name: service.title, path: `/services/${service.slug}` },
+        ]}
+      />
+
       <section className="mx-auto max-w-3xl px-6 pb-16 pt-32 md:pb-20 md:pt-40">
         <Reveal stagger={false}>
           <SectionLabel>Services</SectionLabel>

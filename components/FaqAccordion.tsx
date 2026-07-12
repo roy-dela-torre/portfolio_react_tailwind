@@ -38,11 +38,21 @@ function FaqItem({ question, answer, link }: FaqEntry) {
       >
         <div className="overflow-hidden">
           <p className="text-sm leading-relaxed text-white/60 md:text-base">{answer}</p>
-          {link && (
-            <Link href={link.href} className="mt-3 inline-block text-sm text-accent">
-              {link.label} →
-            </Link>
-          )}
+          {link &&
+            (link.href.startsWith("http") ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-block text-sm text-accent"
+              >
+                {link.label} →
+              </a>
+            ) : (
+              <Link href={link.href} className="mt-3 inline-block text-sm text-accent">
+                {link.label} →
+              </Link>
+            ))}
         </div>
       </div>
     </div>

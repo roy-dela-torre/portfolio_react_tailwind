@@ -10,6 +10,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/services/wordpress-development",
   },
+  openGraph: {
+    title: service.metaTitle,
+    description: service.metaDescription,
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: service.metaTitle }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: service.metaTitle,
+    description: service.metaDescription,
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function WordPressDevelopmentPage() {
