@@ -34,6 +34,12 @@ export const siteConfig = {
   social: {
     linkedin: "https://www.linkedin.com/in/roy-dela-torre/",
     github: "https://github.com/roy-dela-torre",
+    // Placeholder — replace with the real profile URL, then it'll be picked
+    // up automatically by the Person sameAs array in app/layout.tsx.
+    upwork: "https://www.upwork.com/freelancers/REPLACE_ME",
+    // Placeholder — replace with the real profile URL, then it'll be picked
+    // up automatically by the Person sameAs array in app/layout.tsx.
+    onlinejobsph: "https://www.onlinejobs.ph/jobseekers/info/REPLACE_ME",
   },
 };
 
@@ -258,14 +264,6 @@ export const projects: Project[] = [
     liveUrl: "https://pdax.ph/",
   },
   {
-    id: 7,
-    title: "Ocfireworks",
-    description:
-      "WooCommerce store for wholesale fireworks with free shipping and financing options.",
-    imageUrl: "/assets/img/ocfireworks.jpg",
-    liveUrl: "https://ocfireworks.innovnational.com/",
-  },
-  {
     id: 8,
     title: "Mosaic Solution",
     description:
@@ -319,7 +317,7 @@ export const projects: Project[] = [
     description:
       "Site for a subscription-based, data-driven coaching and learning platform for multi-generational teams.",
     imageUrl: "/assets/img/sparkyes.jpg",
-    liveUrl: "https://sparkyes.innovnational.com",
+    liveUrl: "bankofmakati.com.ph",
   },
 ];
 
@@ -421,12 +419,35 @@ export const pricing = {
   ] satisfies PricingTier[],
 };
 
-// Placeholder until a real rating/source (e.g. Upwork, Google) is available.
-export const rating = {
-  score: 5.0,
-  maxScore: 5,
-  label: "Client Satisfaction",
+// Extracts a USD min/max from a rate string, e.g. "$1,500–4,000" -> {min: 1500, max: 4000}.
+// Returns null for strings that mix currencies (e.g. "₱500–₱900/hr (~$9–16)"), since
+// there's no reliable way to isolate a single-currency numeric range from those.
+export function parsePriceRange(rate: string): { minPrice: number; maxPrice: number } | null {
+  if (rate.includes("₱")) return null;
+  const match = rate.match(/\$([\d,]+)(?:\s*[–-]\s*\$?([\d,]+))?/);
+  if (!match) return null;
+  const minPrice = Number(match[1].replace(/,/g, ""));
+  const maxPrice = match[2] ? Number(match[2].replace(/,/g, "")) : minPrice;
+  return { minPrice, maxPrice };
+}
+
+// Maps each dedicated service page to the pricing.projects tiers it should
+// surface as Offers in that page's Service schema.
+export const serviceOfferLabels: Record<string, string[]> = {
+  "wordpress-development": [
+    "Landing Page / Temporary Homepage",
+    "Standard Business Site (Elementor/Divi)",
+    "Custom Theme with ACF Flexible Content",
+    "WooCommerce Store",
+    "Site Migration + Rebuild",
+    "Malware Cleanup + Hardening",
+  ],
+  seo: ["Technical SEO Audit + Implementation", "PageSpeed / Performance Optimization"],
 };
+
+// rating badge removed — it showed an unsourced "5.0 Client Satisfaction"
+// claim with no linkable review. Bring it back once a real, citable rating
+// (e.g. an Upwork Job Success Score or Google review link) exists.
 
 // DRAFT copy — review before relying on it for anything besides the
 // homepage Services section. Descriptions are first-person and honest based
@@ -488,6 +509,7 @@ export const homepageFaqs: FaqEntry[] = [
     question: "Do you work with Elementor / page builders or custom themes?",
     answer:
       "Both. I build with Elementor Pro and Divi for clients who want a faster turnaround or a smaller budget, and fully custom WordPress themes with ACF for clients who want something more tailored and performant. I'll tell you honestly which one fits your project instead of upselling you into the more expensive option.",
+    link: { label: "About Elementor", href: "https://elementor.com/" },
   },
   {
     question: "How do I know you're a reliable developer?",
@@ -537,7 +559,7 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
       "WordPress developer in the Philippines building custom themes, WooCommerce stores, and site migrations for local and international clients.",
     h1: "WordPress Development Services in the Philippines",
     intro:
-      "I'm Roy De La Torre, a WordPress developer based in Metro Manila, Philippines. I build custom WordPress websites for businesses that want a site that's fast, easy to manage, and actually built around how they work, not a generic template stretched to fit.",
+      "I'm Roy De La Torre, a WordPress developer based in Metro Manila, Philippines. I build custom WordPress websites for businesses that want a site that's fast, easy to manage, and actually built around how they work, not a generic template stretched to fit. Projects typically run $300 to $5,000 depending on scope.",
     whatsIncluded: [
       "Custom WordPress theme development with ACF, for clients who want something fully tailored",
       "Elementor Pro and Divi builds, for clients who want a faster turnaround or a smaller budget",
@@ -561,6 +583,7 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
         question: "Do you build WooCommerce stores?",
         answer:
           "Yes, WooCommerce store setup and customization is part of what I do — product catalogs, payment gateways, shipping rules, and store performance tuning.",
+        link: { label: "About WooCommerce", href: "https://woocommerce.com/" },
       },
       {
         question: "What do I need to provide to get started?",
@@ -578,7 +601,7 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
       "SEO specialist in the Philippines offering technical SEO audits, on-page optimization, and Core Web Vitals fixes for WordPress and custom sites.",
     h1: "SEO Services in the Philippines",
     intro:
-      "I'm Roy De La Torre, an SEO specialist based in Metro Manila, Philippines. I help WordPress and custom-built sites get found through technical fixes, on-page optimization, and the same Core Web Vitals work I apply to my own projects.",
+      "I'm Roy De La Torre, an SEO specialist based in Metro Manila, Philippines. I help WordPress and custom-built sites get found through technical fixes, on-page optimization, and the same Core Web Vitals work I apply to my own projects. Audits and optimization work typically run $250 to $1,000.",
     whatsIncluded: [
       "Technical SEO audits (crawlability, indexing, site structure)",
       "On-page SEO (titles, meta descriptions, header hierarchy, internal linking)",
@@ -591,6 +614,7 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
         question: "Do you only do SEO for WordPress sites?",
         answer:
           "No — most of my SEO work happens to be on WordPress sites since that's what I build, but the technical SEO process (audits, Core Web Vitals, structured data) applies to any site, WordPress or not.",
+        link: { label: "Learn about Core Web Vitals", href: "https://web.dev/articles/vitals" },
       },
       {
         // TODO(Roy): confirm these are the timelines you actually quote clients.

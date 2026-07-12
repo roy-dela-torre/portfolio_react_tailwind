@@ -39,9 +39,13 @@ export default async function FaqSection({
       id={id}
       className={`mx-auto max-w-3xl px-6 py-24 md:py-32 ${bordered ? "border-t border-white/10" : ""}`}
     >
+      {/* suppressHydrationWarning: browsers hide the nonce attribute value
+          after applying it (spec behavior, to prevent nonce exfiltration),
+          so React reads back "" and falsely flags a hydration mismatch. */}
       <script
         type="application/ld+json"
         nonce={nonce}
+        suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 

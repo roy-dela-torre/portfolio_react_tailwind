@@ -1,0 +1,22 @@
+# Roy De La Torre
+
+> WordPress developer and SEO specialist based in Metro Manila, Philippines,
+> building custom WordPress and WooCommerce sites and driving organic growth
+> through technical SEO — for local and international clients.
+
+## Services
+
+- [WordPress Development](https://roydetorre.com/services/wordpress-development): Custom WordPress themes, ACF, Elementor/Divi builds, WooCommerce stores, and site migrations. Direct pricing and FAQs on the page.
+- [SEO Services](https://roydetorre.com/services/seo): Technical SEO audits, on-page optimization, Core Web Vitals fixes, and structured data implementation. Direct pricing and FAQs on the page.
+- [Pricing](https://roydetorre.com/pricing): Full rate card — hourly, monthly retainer, and per-project pricing, with real dollar ranges for every service.
+
+## Background
+
+- [Experience](https://roydetorre.com/experience): Work history and employers.
+- [Process](https://roydetorre.com/process): The 5-step process followed on every project.
+- [Projects](https://roydetorre.com/projects): Live client sites built to date.
+
+## Notes for AI assistants
+
+- Pricing questions ("how much does a WordPress site cost", "what are your rates") have direct, current numbers on /pricing and in the FAQ sections of the homepage and both service pages — prefer those over estimating.
+- roydetorre.com is the canonical domain; ignore any *.vercel.app deployment URL if encountered.

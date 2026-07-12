@@ -44,14 +44,22 @@ export const metadata: Metadata = {
   },
 };
 
+const personId = `${siteConfig.url}/#person`;
+
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": personId,
   name: siteConfig.name,
   url: siteConfig.url,
   jobTitle: "WordPress Developer & SEO Specialist",
   description: siteConfig.description,
-  sameAs: [siteConfig.social.linkedin, siteConfig.social.github],
+  sameAs: [
+    siteConfig.social.linkedin,
+    siteConfig.social.github,
+    ...(siteConfig.social.upwork.includes("REPLACE_ME") ? [] : [siteConfig.social.upwork]),
+    ...(siteConfig.social.onlinejobsph.includes("REPLACE_ME") ? [] : [siteConfig.social.onlinejobsph]),
+  ],
   knowsAbout: ["WordPress", "SEO", "PHP", "JavaScript", "WooCommerce", "Technical SEO"],
 };
 
@@ -60,6 +68,27 @@ const websiteJsonLd = {
   "@type": "WebSite",
   name: siteConfig.name,
   url: siteConfig.url,
+};
+
+// serviceType intentionally excludes "Shopify Development" — nothing in
+// data/content.ts (skills, services, or experience) currently evidences
+// Shopify work, and structured data should match what the page actually
+// says. Add it here once real Shopify content exists on the site.
+const professionalServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.description,
+  founder: { "@id": personId },
+  areaServed: ["Philippines", "Worldwide"],
+  priceRange: "$250-$5000",
+  serviceType: ["WordPress Development", "SEO"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Metro Manila",
+    addressCountry: "PH",
+  },
 };
 
 // Reading headers() here opts this layout into per-request dynamic
@@ -75,15 +104,26 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" className={inter.variable}>
       <body className="font-sans antialiased">
+        {/* suppressHydrationWarning: browsers hide the nonce attribute value
+            after applying it (spec behavior, to prevent nonce exfiltration),
+            so React reads back "" and falsely flags a hydration mismatch. */}
         <script
           type="application/ld+json"
           nonce={nonce}
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
         <script
           type="application/ld+json"
           nonce={nonce}
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          nonce={nonce}
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceJsonLd) }}
         />
         <GoogleAnalytics gaId={siteConfig.googleAnalyticsId} nonce={nonce} />
         <SiteBackground />

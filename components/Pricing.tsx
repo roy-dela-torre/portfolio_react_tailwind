@@ -1,21 +1,55 @@
-import { pricing } from "@/data/content";
+import { headers } from "next/headers";
+import { parsePriceRange, pricing } from "@/data/content";
+import BreadcrumbJsonLd from "./BreadcrumbJsonLd";
 import PricingTierCard from "./PricingTierCard";
-import RatingBadge from "./RatingBadge";
 import Reveal from "./Reveal";
 import SectionLabel from "./SectionLabel";
 
-export default function Pricing() {
+export default async function Pricing() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
+  // Only pricing.projects is included here — the hourly/retainer tiers mix
+  // PHP and USD figures in the same string (e.g. "₱500–₱900/hr (~$9–16)"),
+  // and parsePriceRange deliberately returns null for those rather than
+  // risk publishing an incorrect numeric range.
+  const offerCatalogJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    name: "Roy De La Torre — Rate Card",
+    itemListElement: pricing.projects.map((tier, i) => {
+      const range = parsePriceRange(tier.rate);
+      return {
+        "@type": "Offer",
+        position: i + 1,
+        name: tier.label,
+        ...(range && {
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            minPrice: range.minPrice,
+            maxPrice: range.maxPrice,
+            priceCurrency: "USD",
+          },
+        }),
+      };
+    }),
+  };
+
   return (
     <section className="mx-auto max-w-6xl px-6 pb-24 pt-32 md:pb-32 md:pt-40">
+      <script
+        type="application/ld+json"
+        nonce={nonce}
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogJsonLd) }}
+      />
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Pricing", path: "/pricing" }]} />
+
       <Reveal stagger={false}>
         <SectionLabel>Rates</SectionLabel>
         <h1 className="text-3xl font-bold tracking-tight text-white md:text-5xl">Pricing</h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
           {pricing.intro}
         </p>
-        <div className="mt-6">
-          <RatingBadge />
-        </div>
       </Reveal>
 
       <Reveal stagger={false} className="mt-16">
