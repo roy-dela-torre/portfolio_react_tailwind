@@ -51,6 +51,7 @@ export const navLinks = [
   { label: "Skills", href: "/#skills" },
   { label: "Process", href: "/process" },
   { label: "Projects", href: "/projects" },
+  { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
 ];
 
@@ -61,6 +62,7 @@ export const sitemapLinks = [
   { label: "Experience", href: "/experience" },
   { label: "Process", href: "/process" },
   { label: "Projects", href: "/projects" },
+  { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
 ];
 
@@ -639,6 +641,91 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
     ],
   },
 };
+
+export type BlogContentBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "heading"; text: string }
+  | { type: "list"; items: string[] }
+  | { type: "table"; headers: string[]; rows: string[][] };
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  excerpt: string;
+  publishedDate: string;
+  content: BlogContentBlock[];
+};
+
+// DRAFT copy, honest based on the real experience/pricing data already in
+// this file. One thing to double-check: the title says "4 Years of Agency
+// Work" — the experience list + stats.ts currently add up to "3+ Years
+// Experience." Confirm the rounding/timeframe you want before this is final.
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "custom-themes-vs-page-builders",
+    title: "WordPress Custom Themes vs Page Builders: What 4 Years of Agency Work Taught Me",
+    metaTitle:
+      "WordPress Custom Themes vs Page Builders | Roy De La Torre",
+    metaDescription:
+      "A WordPress developer's honest breakdown of when to use Elementor or Divi versus a custom ACF theme, with real cost and timeline ranges.",
+    excerpt:
+      "Page builders get a site live faster and cheaper; custom ACF themes cost more and take longer but pay off in speed and long-term flexibility. Here's how I actually decide between them.",
+    publishedDate: "2026-07-13",
+    content: [
+      {
+        type: "paragraph",
+        text: "Page builders like Elementor and Divi get a project live faster and cost less upfront; custom WordPress themes built with ACF cost more and take longer, but pay off in load speed, long-term maintainability, and how easily a site can grow. Here's how I actually decide between them on client work.",
+      },
+      { type: "heading", text: "What's actually different between a page builder and a custom theme?" },
+      {
+        type: "paragraph",
+        text: "Page builders like Elementor Pro and Divi generate their own markup and CSS on top of WordPress, and give you a visual, drag-and-drop editor. A custom theme built with Advanced Custom Fields (ACF) has hand-written templates and only ships the CSS and JS the site actually needs — nothing extra just because the builder might need it for some other page.",
+      },
+      { type: "heading", text: "When a page builder is the right call" },
+      {
+        type: "list",
+        items: [
+          "Budget is tight and the site needs to launch fast — a builder gets simple sites live in days, not weeks",
+          "The client (or their team) wants to edit pages themselves after launch, without touching code",
+          "The site is mostly static marketing pages without complex custom functionality",
+          "It's a landing page or temporary homepage that's likely to be redesigned again soon anyway",
+        ],
+      },
+      { type: "heading", text: "When a custom ACF theme is worth the extra cost" },
+      {
+        type: "list",
+        items: [
+          "Page speed and Core Web Vitals matter — no page builder ships as little code as a hand-built theme",
+          "The site needs custom content structures (flexible content blocks, repeaters) that a generic builder handles awkwardly",
+          "It's a WooCommerce store or has other complex functionality where builder overhead compounds",
+          "The client plans to keep and grow the site for years, not months",
+        ],
+      },
+      { type: "heading", text: "Page builder vs. custom theme, side by side" },
+      {
+        type: "table",
+        headers: ["", "Page Builder (Elementor/Divi)", "Custom ACF Theme"],
+        rows: [
+          ["Typical cost", "$600–1,500", "$1,500–4,000"],
+          ["Turnaround", "Usually under 2 weeks", "Usually 4–8 weeks"],
+          ["Page speed ceiling", "Good, capped by builder overhead", "Higher — only ships what the site needs"],
+          [
+            "Best for",
+            "Small sites, self-editing clients, quick launches",
+            "WooCommerce stores, custom content needs, long-term sites",
+          ],
+        ],
+      },
+      { type: "heading", text: "What I actually recommend to clients" },
+      {
+        type: "paragraph",
+        text: "I don't default to one or the other — I ask about budget, timeline, and how long the client plans to keep the site before recommending a page builder build or a custom ACF theme. Most of my work spans both: Elementor Pro and Divi when speed or budget calls for it, fully custom themes when performance or long-term flexibility matters more. If you're not sure which fits your project, that's the first thing I sort out on a call.",
+      },
+    ],
+  },
+];
 
 // PLACEHOLDER — every name, role pairing, website, and social link below is
 // a template stand-in. Replace with real people, real URLs, and swap
