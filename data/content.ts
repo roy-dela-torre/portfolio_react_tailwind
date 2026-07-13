@@ -19,6 +19,7 @@ import {
   SiYoast,
   SiGooglesearchconsole,
   SiVercel,
+  SiGravatar,
 } from "react-icons/si";
 import { FaPuzzlePiece, FaPalette, FaFrog, FaLinkedin, FaGithub } from "react-icons/fa";
 
@@ -34,6 +35,7 @@ export const siteConfig = {
   social: {
     linkedin: "https://www.linkedin.com/in/roy-dela-torre/",
     github: "https://github.com/roy-dela-torre",
+    gravatar: "https://gravatar.com/roydelatorre14",
     // Placeholder — replace with the real profile URL, then it'll be picked
     // up automatically by the Person sameAs array in app/layout.tsx.
     upwork: "https://www.upwork.com/freelancers/REPLACE_ME",
@@ -65,6 +67,7 @@ export const sitemapLinks = [
 export const socialLinks = [
   { label: "LinkedIn", href: siteConfig.social.linkedin, Icon: FaLinkedin },
   { label: "GitHub", href: siteConfig.social.github, Icon: FaGithub },
+  { label: "Gravatar", href: siteConfig.social.gravatar, Icon: SiGravatar },
 ];
 
 export const hero = {

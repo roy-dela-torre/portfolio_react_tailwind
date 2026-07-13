@@ -57,6 +57,7 @@ const personJsonLd = {
   sameAs: [
     siteConfig.social.linkedin,
     siteConfig.social.github,
+    siteConfig.social.gravatar,
     ...(siteConfig.social.upwork.includes("REPLACE_ME") ? [] : [siteConfig.social.upwork]),
     ...(siteConfig.social.onlinejobsph.includes("REPLACE_ME") ? [] : [siteConfig.social.onlinejobsph]),
   ],

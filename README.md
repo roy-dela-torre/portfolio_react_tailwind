@@ -1,6 +1,8 @@
-# Portfolio
+# Roy De La Torre — Portfolio
 
-Personal portfolio for Roy De La Torre, built with Next.js (App Router), Tailwind CSS v4, and Framer Motion. Deployed as a standard server-rendered Next.js app on Vercel.
+🔗 **Live site:** [roydetorre.com](https://roydetorre.com)
+
+Personal portfolio of Roy De La Torre, a WordPress/Shopify developer and SEO specialist based in Metro Manila, Philippines. Built with Next.js 15 (App Router), Tailwind CSS v4, and Framer Motion, deployed on Vercel.
 
 ## Tech Stack
 
@@ -38,3 +40,7 @@ To swap in your real photo and résumé:
 - Run `npm audit` and resolve any reported vulnerabilities.
 - Run `npm run build` locally and confirm it completes without errors.
 - Confirm environment variables (if any are added later) are **not** prefixed with `NEXT_PUBLIC_` unless they are meant to be exposed to the browser.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
