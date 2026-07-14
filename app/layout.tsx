@@ -61,7 +61,16 @@ const personJsonLd = {
     ...(siteConfig.social.upwork.includes("REPLACE_ME") ? [] : [siteConfig.social.upwork]),
     ...(siteConfig.social.onlinejobsph.includes("REPLACE_ME") ? [] : [siteConfig.social.onlinejobsph]),
   ],
-  knowsAbout: ["WordPress", "SEO", "PHP", "JavaScript", "WooCommerce", "Technical SEO"],
+  knowsAbout: [
+    "WordPress",
+    "SEO",
+    "PHP",
+    "JavaScript",
+    "WooCommerce",
+    "Technical SEO",
+    "Shopify",
+    "Liquid",
+  ],
 };
 
 const websiteJsonLd = {
@@ -71,10 +80,6 @@ const websiteJsonLd = {
   url: siteConfig.url,
 };
 
-// serviceType intentionally excludes "Shopify Development" — nothing in
-// data/content.ts (skills, services, or experience) currently evidences
-// Shopify work, and structured data should match what the page actually
-// says. Add it here once real Shopify content exists on the site.
 const professionalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -83,8 +88,8 @@ const professionalServiceJsonLd = {
   description: siteConfig.description,
   founder: { "@id": personId },
   areaServed: ["Philippines", "Worldwide"],
-  priceRange: "$250-$5000",
-  serviceType: ["WordPress Development", "SEO"],
+  priceRange: "$250-$8000",
+  serviceType: ["WordPress Development", "SEO", "Shopify Development", "WordPress Maintenance"],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Metro Manila",

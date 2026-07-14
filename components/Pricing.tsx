@@ -1,5 +1,5 @@
 import { headers } from "next/headers";
-import { parsePriceRange, pricing } from "@/data/content";
+import { parsePriceRange, pricing, shopifyPricing } from "@/data/content";
 import BreadcrumbJsonLd from "./BreadcrumbJsonLd";
 import PricingTierCard from "./PricingTierCard";
 import Reveal from "./Reveal";
@@ -16,7 +16,7 @@ export default async function Pricing() {
     "@context": "https://schema.org",
     "@type": "OfferCatalog",
     name: "Roy De La Torre — Rate Card",
-    itemListElement: pricing.projects.map((tier, i) => {
+    itemListElement: [...pricing.projects, ...shopifyPricing.projects].map((tier, i) => {
       const range = parsePriceRange(tier.rate);
       return {
         "@type": "Offer",
@@ -53,7 +53,13 @@ export default async function Pricing() {
       </Reveal>
 
       <Reveal stagger={false} className="mt-16">
-        <h2 className="mb-6 text-xl font-semibold text-white md:text-2xl">Hourly Rate</h2>
+        <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
+          WordPress &amp; SEO Rates
+        </h2>
+      </Reveal>
+
+      <Reveal stagger={false} className="mt-10">
+        <h3 className="mb-6 text-xl font-semibold text-white md:text-2xl">Hourly Rate</h3>
       </Reveal>
       <Reveal className="grid gap-6 md:grid-cols-3">
         {pricing.hourly.map((tier) => (
@@ -62,9 +68,9 @@ export default async function Pricing() {
       </Reveal>
 
       <Reveal stagger={false} className="mt-16">
-        <h2 className="mb-6 text-xl font-semibold text-white md:text-2xl">
+        <h3 className="mb-6 text-xl font-semibold text-white md:text-2xl">
           Monthly (Part-Time Retainer)
-        </h2>
+        </h3>
       </Reveal>
       <Reveal className="grid gap-6 md:grid-cols-3">
         {pricing.retainers.map((tier) => (
@@ -73,10 +79,46 @@ export default async function Pricing() {
       </Reveal>
 
       <Reveal stagger={false} className="mt-16">
-        <h2 className="mb-6 text-xl font-semibold text-white md:text-2xl">Per Project</h2>
+        <h3 className="mb-6 text-xl font-semibold text-white md:text-2xl">Per Project</h3>
       </Reveal>
       <Reveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {pricing.projects.map((tier) => (
+          <PricingTierCard key={tier.label} {...tier} />
+        ))}
+      </Reveal>
+
+      <Reveal stagger={false} className="mt-24">
+        <h2 className="mb-2 text-2xl font-bold tracking-tight text-white md:text-3xl">
+          Shopify Development Rates
+        </h2>
+        <p className="max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
+          {shopifyPricing.intro}
+        </p>
+      </Reveal>
+
+      <Reveal stagger={false} className="mt-10">
+        <h3 className="mb-6 text-xl font-semibold text-white md:text-2xl">Hourly Rate</h3>
+      </Reveal>
+      <Reveal className="grid gap-6 md:grid-cols-3">
+        {shopifyPricing.hourly.map((tier) => (
+          <PricingTierCard key={tier.label} {...tier} />
+        ))}
+      </Reveal>
+
+      <Reveal stagger={false} className="mt-16">
+        <h3 className="mb-6 text-xl font-semibold text-white md:text-2xl">Retainer</h3>
+      </Reveal>
+      <Reveal className="grid gap-6 md:grid-cols-3">
+        {shopifyPricing.retainers.map((tier) => (
+          <PricingTierCard key={tier.label} {...tier} />
+        ))}
+      </Reveal>
+
+      <Reveal stagger={false} className="mt-16">
+        <h3 className="mb-6 text-xl font-semibold text-white md:text-2xl">Per Project</h3>
+      </Reveal>
+      <Reveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {shopifyPricing.projects.map((tier) => (
           <PricingTierCard key={tier.label} {...tier} />
         ))}
       </Reveal>

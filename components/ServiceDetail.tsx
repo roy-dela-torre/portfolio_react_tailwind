@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import Link from "next/link";
 import type { ServiceDetailData } from "@/data/content";
-import { parsePriceRange, pricing, serviceOfferLabels, siteConfig } from "@/data/content";
+import { parsePriceRange, pricing, serviceOfferLabels, shopifyPricing, siteConfig } from "@/data/content";
 import BreadcrumbJsonLd from "./BreadcrumbJsonLd";
 import FaqSection from "./FaqSection";
 import ObfuscatedEmailLink from "./ObfuscatedEmailLink";
@@ -11,8 +11,15 @@ import SectionLabel from "./SectionLabel";
 export default async function ServiceDetail({ service }: { service: ServiceDetailData }) {
   const nonce = (await headers()).get("x-nonce") ?? undefined;
 
+  const allTiers = [
+    ...pricing.projects,
+    ...pricing.retainers,
+    ...shopifyPricing.projects,
+    ...shopifyPricing.retainers,
+  ];
+
   const offers = (serviceOfferLabels[service.slug] ?? [])
-    .map((label) => pricing.projects.find((tier) => tier.label === label))
+    .map((label) => allTiers.find((tier) => tier.label === label))
     .filter((tier): tier is NonNullable<typeof tier> => tier !== undefined)
     .map((tier) => {
       const range = parsePriceRange(tier.rate);
