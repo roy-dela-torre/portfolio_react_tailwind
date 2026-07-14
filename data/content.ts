@@ -20,6 +20,7 @@ import {
   SiGooglesearchconsole,
   SiVercel,
   SiGravatar,
+  SiShopify,
 } from "react-icons/si";
 import { FaPuzzlePiece, FaPalette, FaFrog, FaLinkedin, FaGithub } from "react-icons/fa";
 
@@ -58,7 +59,9 @@ export const navLinks = [
 export const sitemapLinks = [
   { label: "Home", href: "/" },
   { label: "WordPress Development", href: "/services/wordpress-development" },
+  { label: "Shopify Development", href: "/services/shopify-development" },
   { label: "SEO Services", href: "/services/seo" },
+  { label: "WordPress Maintenance & Security", href: "/services/wordpress-maintenance" },
   { label: "Experience", href: "/experience" },
   { label: "Process", href: "/process" },
   { label: "Projects", href: "/projects" },
@@ -89,6 +92,7 @@ export const skills: { name: string; Icon: IconType }[] = [
   { name: "JavaScript", Icon: SiJavascript },
   { name: "ACF", Icon: FaPuzzlePiece },
   { name: "WooCommerce", Icon: SiWoocommerce },
+  { name: "Shopify", Icon: SiShopify },
   { name: "Elementor", Icon: SiElementor },
   { name: "Divi", Icon: FaPalette },
   { name: "Bootstrap", Icon: SiBootstrap },
@@ -424,6 +428,47 @@ export const pricing = {
   ] satisfies PricingTier[],
 };
 
+// Separate rate card for Shopify work — international and local PH rates for
+// Shopify sit well above the WordPress figures above, since custom Liquid
+// theme and headless Shopify work commands a different market rate than
+// page-builder WordPress sites.
+export const shopifyPricing = {
+  intro:
+    "Shopify rates reflect custom Liquid theme development, Shopify Plus/headless builds, and app/API integration work — positioned as performance and theme engineering rather than templated store setup.",
+  hourly: [
+    {
+      label: "International Clients (US/EU/AU, Direct)",
+      rate: "$45–$75/hr",
+      note: "Custom Liquid sections, Core Web Vitals optimization, and custom UX built without stacking heavy apps.",
+    },
+  ] satisfies PricingTier[],
+  retainers: [
+    {
+      label: "International Retainer (20–30 hrs/week)",
+      rate: "$2,500–$4,500/month",
+      note: "Ongoing feature development, technical SEO maintenance, and performance optimization.",
+    },
+    {
+      label: "Full-Time, PH Agencies/Corporate (BGC/Makati)",
+      rate: "₱85,000–₱130,000+/month",
+      note: "For local agencies or multinational hubs — custom-coding and SEO skillset above standard local WordPress developer salaries (~₱40k–60k).",
+    },
+  ] satisfies PricingTier[],
+  projects: [
+    {
+      label: "Custom Shopify Store Build (from Figma/Adobe design)",
+      rate: "$3,000–$8,000+",
+      note: "Charge higher for headless architecture (Next.js/React frontend + Shopify backend) or custom Shopify Functions.",
+      highlight: true,
+    },
+    {
+      label: "Local Freelance Shopify Build (PH Brands)",
+      rate: "₱80,000–₱180,000+",
+      note: "For local mid-sized brands transitioning to custom Shopify — clean UI conversion, essential SEO markup, and GTM/GA4 analytics setup.",
+    },
+  ] satisfies PricingTier[],
+};
+
 // Extracts a USD min/max from a rate string, e.g. "$1,500–4,000" -> {min: 1500, max: 4000}.
 // Returns null for strings that mix currencies (e.g. "₱500–₱900/hr (~$9–16)"), since
 // there's no reliable way to isolate a single-currency numeric range from those.
@@ -445,9 +490,13 @@ export const serviceOfferLabels: Record<string, string[]> = {
     "Custom Theme with ACF Flexible Content",
     "WooCommerce Store",
     "Site Migration + Rebuild",
-    "Malware Cleanup + Hardening",
   ],
   seo: ["Technical SEO Audit + Implementation", "PageSpeed / Performance Optimization"],
+  "wordpress-maintenance": ["Malware Cleanup + Hardening", "Maintenance / Support Retainer, per Site"],
+  "shopify-development": [
+    "Custom Shopify Store Build (from Figma/Adobe design)",
+    "Local Freelance Shopify Build (PH Brands)",
+  ],
 };
 
 // rating badge removed — it showed an unsourced "5.0 Client Satisfaction"
@@ -473,6 +522,13 @@ export const services: Service[] = [
     href: "/services/wordpress-development",
   },
   {
+    slug: "shopify-development",
+    title: "Shopify Development",
+    description:
+      "As a Shopify developer, I build custom Liquid themes, Shopify Plus and headless storefronts (Next.js/React frontend with a Shopify backend), and Shopify API and app integrations — for Philippine brands moving off generic templates and international clients who want a store engineered around Core Web Vitals, not stacked with apps.",
+    href: "/services/shopify-development",
+  },
+  {
     slug: "seo",
     title: "SEO Services",
     description:
@@ -483,8 +539,8 @@ export const services: Service[] = [
     slug: "maintenance",
     title: "Website Maintenance & Support",
     description:
-      "Launch day isn't the finish line. I offer ongoing WordPress maintenance and support — updates, backups, security monitoring, and small fixes — so your site stays fast, secure, and online. Pricing for this is on my rate card, alongside everything else I offer.",
-    href: "/pricing",
+      "Launch day isn't the finish line. I offer ongoing WordPress maintenance and support — updates, backups, security monitoring, malware removal, and small fixes — so your site stays fast, secure, and online.",
+    href: "/services/wordpress-maintenance",
   },
 ];
 
@@ -537,7 +593,7 @@ export const homepageFaqs: FaqEntry[] = [
     question: "Do you offer maintenance and support after launch?",
     answer:
       "Yes — ongoing maintenance and support after launch, including plugin and core updates, backups, uptime monitoring, and small content or bug fixes. It's available as a monthly retainer, so you're not stuck troubleshooting problems on your own once the site is live.",
-    link: { label: "View maintenance pricing", href: "/pricing" },
+    link: { label: "See maintenance & security services", href: "/services/wordpress-maintenance" },
   },
 ];
 
@@ -637,6 +693,91 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
         answer:
           "Yes, that's usually how I start: a technical SEO audit up front so you know exactly what's wrong and what it'll take to fix, before committing to ongoing work.",
         link: { label: "See audit pricing", href: "/pricing" },
+      },
+    ],
+  },
+  "shopify-development": {
+    slug: "shopify-development",
+    title: "Shopify Development",
+    metaTitle: "Shopify Developer Philippines | Custom Shopify Theme Development | Roy De La Torre",
+    metaDescription:
+      "Shopify developer in the Philippines building custom Liquid themes, Shopify Plus and headless Shopify storefronts, and Shopify API/app integrations for local and international brands.",
+    h1: "Shopify Development Services in the Philippines",
+    intro:
+      "I'm Roy De La Torre, a Shopify developer based in Metro Manila, Philippines, working in Liquid, Shopify Plus, headless Shopify, and Shopify's API and app ecosystem. I build stores engineered around Core Web Vitals and custom UX rather than stacked on top of heavy apps. Local Philippine builds typically run ₱80,000–₱180,000+; international clients direct run $45–$75/hr or $3,000–$8,000+ per build.",
+    whatsIncluded: [
+      "Custom Shopify theme development in Liquid, built for speed instead of relying on heavy apps",
+      "Shopify API and third-party app integrations",
+      "Shopify Plus and headless Shopify builds (Next.js/React frontend with a Shopify backend)",
+      "Custom Shopify Functions for advanced store and checkout logic",
+      "Store performance optimization and Core Web Vitals tuning",
+      "Analytics setup (GTM/GA4) and essential SEO markup for local Philippine brands moving to custom Shopify",
+    ],
+    faqs: [
+      {
+        question: "Do you build custom Shopify themes, or just customize existing ones?",
+        answer:
+          "Both, depending on scope and budget — fully custom Liquid themes built from a Figma/Adobe design for clients who want something tailored, or theme customization on top of an existing Shopify theme for a faster, smaller-budget turnaround.",
+        link: { label: "About Liquid", href: "https://shopify.dev/docs/api/liquid" },
+      },
+      {
+        question: "What's headless Shopify, and do I need it?",
+        answer:
+          "Headless Shopify pairs a Next.js/React frontend with Shopify as the backend — it's worth the extra cost when you need custom UX or performance a standard theme can't deliver. For most standard stores, a well-built custom Liquid theme is the more cost-effective choice.",
+      },
+      {
+        question: "Do you have example Shopify stores I can look at?",
+        answer:
+          "My public portfolio here is mostly WordPress and WooCommerce case studies so far — Shopify work is newer. I'm happy to walk through my Shopify experience and approach directly on a call rather than pointing you to a placeholder link.",
+        link: { label: "See my WordPress projects", href: "/projects" },
+      },
+      {
+        question: "Can you migrate my store from WooCommerce (or another platform) to Shopify?",
+        answer:
+          "Yes — since I work in both WordPress/WooCommerce and Shopify, I can plan a migration that carries over your product catalog, content, and SEO equity rather than starting from zero.",
+        link: { label: "Compare with WordPress development", href: "/services/wordpress-development" },
+      },
+    ],
+  },
+  "wordpress-maintenance": {
+    slug: "wordpress-maintenance",
+    title: "WordPress Maintenance & Security",
+    metaTitle: "WordPress Maintenance & Security Services Philippines | Roy De La Torre",
+    metaDescription:
+      "WordPress maintenance and security services in the Philippines — malware removal, core/plugin updates, backups, and uptime monitoring for existing WordPress sites.",
+    h1: "WordPress Maintenance & Security Services in the Philippines",
+    intro:
+      "I'm Roy De La Torre, a WordPress developer based in Metro Manila, Philippines. Once a site is live, I keep it updated, backed up, and secure — including cleaning up sites that are already compromised. Malware cleanup runs $300–800, and ongoing maintenance retainers run $150–400/month per site.",
+    whatsIncluded: [
+      "WordPress core, theme, and plugin updates",
+      "Malware removal and site cleanup for already-compromised sites",
+      "Security hardening — login protection, file integrity checks, firewall rules",
+      "Automated backups and disaster recovery",
+      "Uptime monitoring and incident response",
+      "Small content and bug fixes included in your monthly retainer",
+    ],
+    faqs: [
+      {
+        question: "My WordPress site was hacked or has malware — can you fix it?",
+        answer:
+          "Yes, malware removal and cleanup is part of what I offer — I'll clean the infected files, close the vulnerability that let it in, and harden the site so it doesn't happen again. This is priced separately from the monthly retainer, typically $300–800 depending on how bad the infection is.",
+        link: { label: "See malware cleanup pricing", href: "/pricing" },
+      },
+      {
+        question: "What's included in the monthly maintenance retainer?",
+        answer:
+          "Core, theme, and plugin updates, automated backups, uptime monitoring, security hardening, and small content or bug fixes — so you're not stuck troubleshooting a broken update or a slow site on your own.",
+        link: { label: "See retainer pricing", href: "/pricing" },
+      },
+      {
+        question: "Do I need this if my site isn't built by you?",
+        answer:
+          "No — I take on maintenance and security retainers for WordPress sites I didn't originally build, as long as I can get a look at the current setup first.",
+      },
+      {
+        question: "How fast can you respond if my site goes down?",
+        answer:
+          "Retainer clients get priority response on uptime and security incidents rather than being queued behind new project work — the specifics depend on your retainer tier, which we'd agree on upfront.",
       },
     ],
   },

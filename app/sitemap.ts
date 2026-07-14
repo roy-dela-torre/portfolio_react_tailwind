@@ -9,7 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     { path: "", priority: 1 },
     { path: "/services/wordpress-development", priority: 0.9 },
+    { path: "/services/shopify-development", priority: 0.9 },
     { path: "/services/seo", priority: 0.9 },
+    { path: "/services/wordpress-maintenance", priority: 0.8 },
     { path: "/experience", priority: 0.8 },
     { path: "/process", priority: 0.7 },
     { path: "/projects", priority: 0.8 },

@@ -3,7 +3,7 @@ import Pricing from "@/components/Pricing";
 
 const title = "Pricing";
 const description =
-  "Hourly, retainer, and per-project rates for WordPress development, WooCommerce builds, site migrations, and technical SEO work with Roy De La Torre.";
+  "Hourly, retainer, and per-project rates for WordPress development, WooCommerce builds, Shopify development, site migrations, and technical SEO work with Roy De La Torre.";
 
 export const metadata: Metadata = {
   title,
