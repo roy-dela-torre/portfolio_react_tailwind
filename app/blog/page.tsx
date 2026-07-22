@@ -4,10 +4,16 @@ import BlogIndex from "@/components/BlogIndex";
 const title = "Blog";
 const description =
   "Notes on WordPress development, page builders vs. custom themes, and technical SEO from Roy De La Torre.";
+const keywords = [
+  "WordPress developer blog Philippines",
+  "WordPress developer cost Philippines",
+  "technical SEO Philippines",
+];
 
 export const metadata: Metadata = {
   title,
   description,
+  keywords,
   alternates: {
     canonical: "/blog",
   },

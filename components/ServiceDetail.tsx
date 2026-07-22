@@ -43,7 +43,7 @@ export default async function ServiceDetail({ service }: { service: ServiceDetai
     name: service.title,
     description: service.metaDescription,
     provider: { "@id": `${siteConfig.url}/#person` },
-    areaServed: ["Philippines", "Worldwide"],
+    areaServed: siteConfig.areaServed,
     offers,
   };
 

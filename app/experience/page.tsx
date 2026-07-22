@@ -5,10 +5,12 @@ import Experience from "@/components/Experience";
 const title = "Experience";
 const description =
   "Roy De La Torre's work history as a WordPress developer and SEO specialist across Clarvida Global Business Center, Teqon Web Solutions B.V., and SEO Hacker.";
+const keywords = ["WordPress developer Philippines", "SEO specialist Metro Manila"];
 
 export const metadata: Metadata = {
   title,
   description,
+  keywords,
   alternates: {
     canonical: "/experience",
   },

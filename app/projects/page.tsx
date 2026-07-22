@@ -5,10 +5,16 @@ import Projects from "@/components/Projects";
 const title = "Projects";
 const description =
   "A selection of custom WordPress and WooCommerce sites built by Roy De La Torre for clients across the Philippines and internationally.";
+const keywords = [
+  "WordPress developer portfolio Philippines",
+  "WooCommerce developer Metro Manila",
+  "custom WordPress theme examples Philippines",
+];
 
 export const metadata: Metadata = {
   title,
   description,
+  keywords,
   alternates: {
     canonical: "/projects",
   },

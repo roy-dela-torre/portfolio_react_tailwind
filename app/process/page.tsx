@@ -5,10 +5,12 @@ import ProcessSection from "@/components/ProcessSection";
 const title = "My Design Process";
 const description =
   "The 5-step process Roy De La Torre follows on every WordPress project: strategize, wireframe, design, develop, and quality-assure.";
+const keywords = ["WordPress development process Philippines", "freelance WordPress developer Metro Manila"];
 
 export const metadata: Metadata = {
   title,
   description,
+  keywords,
   alternates: {
     canonical: "/process",
   },
