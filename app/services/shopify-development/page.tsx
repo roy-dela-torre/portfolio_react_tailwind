@@ -5,7 +5,7 @@ import { serviceDetails } from "@/data/content";
 const service = serviceDetails["shopify-development"];
 
 export const metadata: Metadata = {
-  title: service.metaTitle,
+  title: { absolute: service.metaTitle },
   description: service.metaDescription,
   keywords: service.keywords,
   alternates: {

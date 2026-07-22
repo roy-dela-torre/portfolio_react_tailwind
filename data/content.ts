@@ -33,6 +33,7 @@ export const siteConfig = {
   url: "https://roydetorre.com",
   location: "Metro Manila, Philippines",
   areaServed: ["Metro Manila, Philippines", "Philippines", "Worldwide"],
+  formspreeEndpoint: "https://formspree.io/f/movkbjan",
   keywords: [
     "WordPress developer Philippines",
     "WordPress developer Metro Manila",
@@ -547,9 +548,9 @@ export const services: Service[] = [
   },
   {
     slug: "maintenance",
-    title: "Website Maintenance & Support",
+    title: "WordPress Security & Maintenance",
     description:
-      "Launch day isn't the finish line. I offer ongoing WordPress maintenance and support for businesses in Metro Manila and beyond — updates, backups, security monitoring, malware removal, and small fixes — so your site stays fast, secure, and online.",
+      "WordPress security is the job, not an afterthought. I harden sites against malware and brute-force attacks, clean up sites that are already compromised, and keep them updated and backed up — for businesses in Metro Manila and beyond.",
     href: "/services/wordpress-maintenance",
   },
 ];
@@ -813,34 +814,46 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
   },
   "wordpress-maintenance": {
     slug: "wordpress-maintenance",
-    title: "WordPress Maintenance & Security",
-    metaTitle: "WordPress Maintenance & Security Services Philippines | Roy De La Torre",
+    title: "WordPress Security & Hardening",
+    metaTitle: "WordPress Security Hardening Philippines | Roy De La Torre",
     metaDescription:
-      "WordPress maintenance and security services in the Philippines — malware removal, core/plugin updates, backups, and uptime monitoring for existing WordPress sites.",
+      "WordPress security hardening, malware cleanup, and ongoing monitoring for businesses in the Philippines — stop attacks before they cost you customers.",
     keywords: [
-      "WordPress maintenance services Philippines",
+      "WordPress security services Philippines",
+      "WordPress security audit Philippines",
       "WordPress malware removal Philippines",
-      "WordPress security services Metro Manila",
-      "WordPress support retainer Philippines",
-      "WordPress care plan Philippines",
+      "WordPress hardening Philippines",
+      "WordPress firewall setup Philippines",
+      "WooCommerce security Philippines",
     ],
-    h1: "WordPress Maintenance & Security Services in the Philippines",
+    h1: "WordPress Security & Hardening Services in the Philippines",
     intro:
-      "I'm Roy De La Torre, a WordPress developer based in Metro Manila, Philippines. Once a site is live, I keep it updated, backed up, and secure — including cleaning up sites that are already compromised. Malware cleanup runs $300–800, and ongoing maintenance retainers run $150–400/month per site.",
+      "I'm Roy De La Torre, a WordPress developer based in Metro Manila, Philippines, specializing in WordPress security — hardening sites before they're attacked, and cleaning up the ones that already have been. Most WordPress compromises trace back to one of three things: an outdated plugin, a weak admin password, or an unpatched core file — closing that specific gap matters more than just wiping the infection and hoping it doesn't come back. Malware cleanup runs $300–800; ongoing security and maintenance retainers run $150–400/month per site.",
     whatsIncluded: [
-      "WordPress core, theme, and plugin updates",
-      "Malware removal and site cleanup for already-compromised sites",
-      "Security hardening — login protection, file integrity checks, firewall rules",
-      "Automated backups and disaster recovery",
-      "Uptime monitoring and incident response",
-      "Small content and bug fixes included in your monthly retainer",
+      "Security audits that identify the specific entry point — outdated plugin, weak credentials, or exposed file permissions — before it's exploited",
+      "Malware removal and infected-file cleanup for sites that are already compromised",
+      "Security hardening — login rate-limiting, two-factor authentication, file integrity monitoring, and firewall rules",
+      "WordPress core, theme, and plugin updates, kept current without breaking a live site",
+      "Automated backups with tested disaster recovery, not backups that have never been restored",
+      "Uptime and intrusion monitoring, with priority response for retainer clients",
     ],
     faqs: [
       {
         question: "My WordPress site was hacked or has malware — can you fix it?",
         answer:
-          "Yes, malware removal and cleanup is part of what I offer — I'll clean the infected files, close the vulnerability that let it in, and harden the site so it doesn't happen again. This is priced separately from the monthly retainer, typically $300–800 depending on how bad the infection is.",
+          "Yes — I'll clean the infected files, close the vulnerability that let it in, and harden the site so it doesn't happen again. This is priced separately from the monthly retainer, typically $300–800 depending on how bad the infection is.",
         link: { label: "See malware cleanup pricing", href: "/pricing" },
+      },
+      {
+        question: "How do you harden WordPress security beyond just installing a plugin?",
+        answer:
+          "A single security plugin doesn't close every gap, so hardening also means server- and config-level changes: disabling file editing from wp-admin, restricting XML-RPC and the REST API where they're not needed, enforcing strong unique credentials with login rate-limiting, and locking down file permissions. A firewall plugin is one layer of that, not the whole strategy.",
+      },
+      {
+        question: "What's included in a WordPress security audit?",
+        answer:
+          "An audit checks the three most common entry points first — outdated plugins/themes, weak admin credentials, and file permission issues — then reviews your backups, uptime monitoring, and firewall rules. You get a prioritized list of what to fix, not just a pass/fail score.",
+        link: { label: "See audit pricing", href: "/pricing" },
       },
       {
         question: "What's included in the monthly maintenance retainer?",
@@ -851,7 +864,7 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
       {
         question: "Do I need this if my site isn't built by you?",
         answer:
-          "No — I take on maintenance and security retainers for WordPress sites I didn't originally build, as long as I can get a look at the current setup first.",
+          "No — I take on security and maintenance retainers for WordPress sites I didn't originally build, as long as I can get a look at the current setup first.",
       },
       {
         question: "How fast can you respond if my site goes down?",
@@ -861,7 +874,7 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
       {
         question: "Do you support small business WordPress sites in Metro Manila?",
         answer:
-          "Yes — maintenance retainers are sized per site, not per company size, so a single small business site in Metro Manila is a normal engagement, not just larger multi-site accounts.",
+          "Yes — retainers are sized per site, not per company size, so a single small business site in Metro Manila is a normal engagement, not just larger multi-site accounts.",
       },
     ],
   },
