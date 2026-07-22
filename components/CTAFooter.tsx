@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaEnvelope } from "react-icons/fa";
 import { cta, siteConfig, sitemapLinks, socialLinks } from "@/data/content";
+import ContactForm from "./ContactForm";
 import ObfuscatedEmailLink from "./ObfuscatedEmailLink";
 import Reveal from "./Reveal";
 
@@ -23,10 +24,17 @@ export default function CTAFooter() {
           </h2>
         </Reveal>
 
+        <Reveal stagger={false} className="mt-10">
+          <ContactForm />
+        </Reveal>
+
         <Reveal stagger={false}>
-          <ObfuscatedEmailLink className="mt-10 inline-block rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black transition-colors duration-300 hover:bg-accent">
-            {cta.buttonLabel}
-          </ObfuscatedEmailLink>
+          <p className="mt-6 text-sm text-white/60">
+            Prefer email?{" "}
+            <ObfuscatedEmailLink className="text-accent underline underline-offset-4">
+              Email me directly
+            </ObfuscatedEmailLink>
+          </p>
         </Reveal>
 
         <ul className="mt-14 flex items-center justify-center gap-6">
