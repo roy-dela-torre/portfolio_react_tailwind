@@ -18,10 +18,10 @@ export function middleware(request: NextRequest) {
     `${scriptSrc} https://www.googletagmanager.com`,
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data:",
-    "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com",
+    "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://formspree.io",
     "frame-ancestors 'none'",
     "base-uri 'self'",
-    "form-action 'self'",
+    "form-action 'self' https://formspree.io",
     "upgrade-insecure-requests",
   ].join("; ");
 
