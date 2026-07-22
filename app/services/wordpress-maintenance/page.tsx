@@ -5,7 +5,7 @@ import { serviceDetails } from "@/data/content";
 const service = serviceDetails["wordpress-maintenance"];
 
 export const metadata: Metadata = {
-  title: service.metaTitle,
+  title: { absolute: service.metaTitle },
   description: service.metaDescription,
   keywords: service.keywords,
   alternates: {
