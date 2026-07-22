@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  keywords: siteConfig.keywords,
   alternates: {
     canonical: "/",
   },
@@ -87,7 +88,7 @@ const professionalServiceJsonLd = {
   url: siteConfig.url,
   description: siteConfig.description,
   founder: { "@id": personId },
-  areaServed: ["Philippines", "Worldwide"],
+  areaServed: siteConfig.areaServed,
   priceRange: "$250-$8000",
   serviceType: ["WordPress Development", "SEO", "Shopify Development", "WordPress Maintenance"],
   address: {

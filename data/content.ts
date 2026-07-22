@@ -32,6 +32,16 @@ export const siteConfig = {
     "Roy De La Torre is a WordPress developer and SEO specialist based in the Philippines, building fast, accessible, custom WordPress and WooCommerce sites and driving organic growth through technical SEO.",
   url: "https://roydetorre.com",
   location: "Metro Manila, Philippines",
+  areaServed: ["Metro Manila, Philippines", "Philippines", "Worldwide"],
+  keywords: [
+    "WordPress developer Philippines",
+    "WordPress developer Metro Manila",
+    "freelance WordPress developer Philippines",
+    "SEO specialist Philippines",
+    "Shopify developer Philippines",
+    "WooCommerce developer Philippines",
+    "technical SEO Philippines",
+  ],
   googleAnalyticsId: "G-WDV14PZ98M",
   social: {
     linkedin: "https://www.linkedin.com/in/roy-dela-torre/",
@@ -518,28 +528,28 @@ export const services: Service[] = [
     slug: "wordpress-development",
     title: "WordPress Development",
     description:
-      "As a WordPress developer in the Philippines, I design and build custom WordPress websites for local and international clients — from simple business sites to WooCommerce stores. I write clean, maintainable code using ACF and custom themes, not just page-builder templates, so your site stays fast and easy to manage long after launch.",
+      "As a freelance WordPress developer based in Metro Manila, I design and build custom WordPress websites for local and international clients — from simple business sites to WooCommerce stores. I write clean, maintainable code using ACF and custom themes, not just page-builder templates, so your site stays fast and easy to manage long after launch.",
     href: "/services/wordpress-development",
   },
   {
     slug: "shopify-development",
     title: "Shopify Development",
     description:
-      "As a Shopify developer, I build custom Liquid themes, Shopify Plus and headless storefronts (Next.js/React frontend with a Shopify backend), and Shopify API and app integrations — for Philippine brands moving off generic templates and international clients who want a store engineered around Core Web Vitals, not stacked with apps.",
+      "As a Shopify developer based in the Philippines, I build custom Liquid themes, Shopify Plus and headless storefronts (Next.js/React frontend with a Shopify backend), and Shopify API and app integrations — for Philippine brands moving off generic templates and international clients who want a store engineered around Core Web Vitals, not stacked with apps.",
     href: "/services/shopify-development",
   },
   {
     slug: "seo",
     title: "SEO Services",
     description:
-      "As an SEO specialist, I help your WordPress site actually get found — through technical SEO audits, on-page optimization, and fixes that improve Core Web Vitals and search visibility. I use tools like Yoast SEO, Google Search Console, and Screaming Frog to find what's holding your site back and fix it.",
+      "As an SEO specialist serving clients across Metro Manila and the wider Philippines, I help your WordPress site actually get found — through technical SEO audits, on-page optimization, and fixes that improve Core Web Vitals and search visibility. I use tools like Yoast SEO, Google Search Console, and Screaming Frog to find what's holding your site back and fix it.",
     href: "/services/seo",
   },
   {
     slug: "maintenance",
     title: "Website Maintenance & Support",
     description:
-      "Launch day isn't the finish line. I offer ongoing WordPress maintenance and support — updates, backups, security monitoring, malware removal, and small fixes — so your site stays fast, secure, and online.",
+      "Launch day isn't the finish line. I offer ongoing WordPress maintenance and support for businesses in Metro Manila and beyond — updates, backups, security monitoring, malware removal, and small fixes — so your site stays fast, secure, and online.",
     href: "/services/wordpress-maintenance",
   },
 ];
@@ -595,6 +605,17 @@ export const homepageFaqs: FaqEntry[] = [
       "Yes — ongoing maintenance and support after launch, including plugin and core updates, backups, uptime monitoring, and small content or bug fixes. It's available as a monthly retainer, so you're not stuck troubleshooting problems on your own once the site is live.",
     link: { label: "See maintenance & security services", href: "/services/wordpress-maintenance" },
   },
+  {
+    question: "Are you a freelance WordPress developer, or do you work through an agency?",
+    answer:
+      "I take on freelance/independent client work alongside my day-to-day role, so you're working directly with me rather than being routed through account managers. I'm based in Metro Manila and take on projects both locally and internationally.",
+  },
+  {
+    question: "Do you work with small businesses in Metro Manila, or only large companies?",
+    answer:
+      "Small businesses, mostly. Landing pages and standard business sites for local Metro Manila businesses make up a good share of my project work — you don't need an enterprise budget to work with me.",
+    link: { label: "See project rates", href: "/pricing" },
+  },
 ];
 
 export type ServiceDetailData = {
@@ -602,6 +623,7 @@ export type ServiceDetailData = {
   title: string;
   metaTitle: string;
   metaDescription: string;
+  keywords: string[];
   h1: string;
   intro: string;
   whatsIncluded: string[];
@@ -618,6 +640,14 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
     metaTitle: "WordPress Development Services Philippines | Roy De La Torre",
     metaDescription:
       "WordPress developer in the Philippines building custom themes, WooCommerce stores, and site migrations for local and international clients.",
+    keywords: [
+      "WordPress developer Philippines",
+      "freelance WordPress developer Metro Manila",
+      "custom WordPress theme developer Philippines",
+      "WooCommerce developer Philippines",
+      "hire WordPress developer Philippines",
+      "affordable WordPress developer for small business",
+    ],
     h1: "WordPress Development Services in the Philippines",
     intro:
       "I'm Roy De La Torre, a WordPress developer based in Metro Manila, Philippines. I build custom WordPress websites for businesses that want a site that's fast, easy to manage, and actually built around how they work, not a generic template stretched to fit. Projects typically run $300 to $5,000 depending on scope.",
@@ -652,6 +682,17 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
           "Just your content (or a plan for getting it), your goals for the site, and any brand assets like a logo. I'll help you fill in gaps in strategy and content structure along the way.",
         link: { label: "See my process", href: "/process" },
       },
+      {
+        question: "Do you work with small businesses in Metro Manila?",
+        answer:
+          "Yes — a good share of my WordPress project work is for small and mid-sized businesses in Metro Manila, alongside international clients. You don't need an enterprise budget to work with me directly.",
+      },
+      {
+        question: "Can I hire you for a one-off project, or only ongoing retainers?",
+        answer:
+          "One-off projects are the norm — most clients hire me for a single site build or migration, then optionally move to a maintenance retainer afterward. There's no minimum ongoing commitment to get a project started.",
+        link: { label: "See project pricing", href: "/pricing" },
+      },
     ],
   },
   seo: {
@@ -660,6 +701,14 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
     metaTitle: "SEO Services Philippines | Roy De La Torre — SEO Specialist",
     metaDescription:
       "SEO specialist in the Philippines offering technical SEO audits, on-page optimization, and Core Web Vitals fixes for WordPress and custom sites.",
+    keywords: [
+      "SEO specialist Philippines",
+      "technical SEO audit Philippines",
+      "local SEO services Philippines",
+      "freelance SEO consultant Metro Manila",
+      "Core Web Vitals optimization Philippines",
+      "affordable SEO services for small business Philippines",
+    ],
     h1: "SEO Services in the Philippines",
     intro:
       "I'm Roy De La Torre, an SEO specialist based in Metro Manila, Philippines. I help WordPress and custom-built sites get found through technical fixes, on-page optimization, and the same Core Web Vitals work I apply to my own projects. Audits and optimization work typically run $250 to $1,000.",
@@ -694,6 +743,16 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
           "Yes, that's usually how I start: a technical SEO audit up front so you know exactly what's wrong and what it'll take to fix, before committing to ongoing work.",
         link: { label: "See audit pricing", href: "/pricing" },
       },
+      {
+        question: "What's the difference between technical SEO and local SEO?",
+        answer:
+          "Technical SEO fixes the foundation — crawlability, site speed, structured data — that every site needs regardless of who it's targeting. Local SEO layers on top of that for businesses targeting a specific area, like Metro Manila: things like Google Business Profile optimization and location-specific content. My focus is the technical layer, which local SEO also depends on.",
+      },
+      {
+        question: "Do you offer SEO services for small businesses in Metro Manila?",
+        answer:
+          "Yes — I work with small and mid-sized businesses in Metro Manila as well as international clients. A technical SEO audit is usually the right starting point regardless of business size.",
+      },
     ],
   },
   "shopify-development": {
@@ -702,6 +761,13 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
     metaTitle: "Shopify Developer Philippines | Custom Shopify Theme Development | Roy De La Torre",
     metaDescription:
       "Shopify developer in the Philippines building custom Liquid themes, Shopify Plus and headless Shopify storefronts, and Shopify API/app integrations for local and international brands.",
+    keywords: [
+      "Shopify developer Philippines",
+      "freelance Shopify developer Metro Manila",
+      "custom Shopify theme developer Philippines",
+      "headless Shopify developer Philippines",
+      "Shopify store migration Philippines",
+    ],
     h1: "Shopify Development Services in the Philippines",
     intro:
       "I'm Roy De La Torre, a Shopify developer based in Metro Manila, Philippines, working in Liquid, Shopify Plus, headless Shopify, and Shopify's API and app ecosystem. I build stores engineered around Core Web Vitals and custom UX rather than stacked on top of heavy apps. Local Philippine builds typically run ₱80,000–₱180,000+; international clients direct run $45–$75/hr or $3,000–$8,000+ per build.",
@@ -737,6 +803,12 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
           "Yes — since I work in both WordPress/WooCommerce and Shopify, I can plan a migration that carries over your product catalog, content, and SEO equity rather than starting from zero.",
         link: { label: "Compare with WordPress development", href: "/services/wordpress-development" },
       },
+      {
+        question: "Do you work with small Philippine brands, or only large ones?",
+        answer:
+          "Both — the Shopify pricing tiers I quote cover small-to-mid-sized local brands moving off a template as well as larger builds with headless or Shopify Plus requirements. I'll size the scope to fit your brand's stage rather than defaulting to the biggest package.",
+        link: { label: "See Shopify pricing", href: "/pricing" },
+      },
     ],
   },
   "wordpress-maintenance": {
@@ -745,6 +817,13 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
     metaTitle: "WordPress Maintenance & Security Services Philippines | Roy De La Torre",
     metaDescription:
       "WordPress maintenance and security services in the Philippines — malware removal, core/plugin updates, backups, and uptime monitoring for existing WordPress sites.",
+    keywords: [
+      "WordPress maintenance services Philippines",
+      "WordPress malware removal Philippines",
+      "WordPress security services Metro Manila",
+      "WordPress support retainer Philippines",
+      "WordPress care plan Philippines",
+    ],
     h1: "WordPress Maintenance & Security Services in the Philippines",
     intro:
       "I'm Roy De La Torre, a WordPress developer based in Metro Manila, Philippines. Once a site is live, I keep it updated, backed up, and secure — including cleaning up sites that are already compromised. Malware cleanup runs $300–800, and ongoing maintenance retainers run $150–400/month per site.",
@@ -779,6 +858,11 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
         answer:
           "Retainer clients get priority response on uptime and security incidents rather than being queued behind new project work — the specifics depend on your retainer tier, which we'd agree on upfront.",
       },
+      {
+        question: "Do you support small business WordPress sites in Metro Manila?",
+        answer:
+          "Yes — maintenance retainers are sized per site, not per company size, so a single small business site in Metro Manila is a normal engagement, not just larger multi-site accounts.",
+      },
     ],
   },
 };
@@ -794,6 +878,7 @@ export type BlogPost = {
   title: string;
   metaTitle: string;
   metaDescription: string;
+  keywords: string[];
   excerpt: string;
   publishedDate: string;
   content: BlogContentBlock[];
@@ -811,6 +896,12 @@ export const blogPosts: BlogPost[] = [
       "WordPress Custom Themes vs Page Builders | Roy De La Torre",
     metaDescription:
       "A WordPress developer's honest breakdown of when to use Elementor or Divi versus a custom ACF theme, with real cost and timeline ranges.",
+    keywords: [
+      "WordPress page builder vs custom theme",
+      "Elementor vs custom WordPress theme",
+      "ACF WordPress theme cost",
+      "WordPress developer Philippines",
+    ],
     excerpt:
       "Page builders get a site live faster and cheaper; custom ACF themes cost more and take longer but pay off in speed and long-term flexibility. Here's how I actually decide between them.",
     publishedDate: "2026-07-13",
@@ -863,6 +954,80 @@ export const blogPosts: BlogPost[] = [
       {
         type: "paragraph",
         text: "I don't default to one or the other — I ask about budget, timeline, and how long the client plans to keep the site before recommending a page builder build or a custom ACF theme. Most of my work spans both: Elementor Pro and Divi when speed or budget calls for it, fully custom themes when performance or long-term flexibility matters more. If you're not sure which fits your project, that's the first thing I sort out on a call.",
+      },
+    ],
+  },
+  {
+    slug: "wordpress-developer-cost-philippines",
+    title: "How Much Does a WordPress Developer Cost in the Philippines? (2026 Rates)",
+    metaTitle: "How Much Does a WordPress Developer Cost in the Philippines? | Roy De La Torre",
+    metaDescription:
+      "Real 2026 hourly, retainer, and per-project rate ranges for hiring a WordPress developer in the Philippines, for both local and international clients.",
+    keywords: [
+      "WordPress developer cost Philippines",
+      "WordPress developer rates Philippines",
+      "how much does a WordPress website cost Philippines",
+      "freelance WordPress developer pricing Philippines",
+      "hire WordPress developer Philippines",
+    ],
+    excerpt:
+      "Real rate ranges for hiring a WordPress developer in the Philippines in 2026 — hourly, retainer, and per-project — broken down by whether you're a local business or hiring internationally.",
+    publishedDate: "2026-07-21",
+    content: [
+      {
+        type: "paragraph",
+        text: "\"How much does a WordPress developer cost?\" is one of the first questions I get from prospective clients, and the honest answer is: it depends on where you're based, how you're hiring, and what you need built. Below are the actual rate ranges I quote in 2026, broken out by engagement type, so you can budget before we even get on a call.",
+      },
+      { type: "heading", text: "Hourly rates" },
+      {
+        type: "table",
+        headers: ["Client type", "Rate"],
+        rows: [
+          ["Local PH clients", "₱500–₱900/hr (~$9–16)"],
+          ["International clients (US/AU/UK, direct)", "$15–30/hr"],
+          ["Agencies / platforms (Upwork, OnlineJobs.ph)", "$8–15/hr"],
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "International direct clients pay more per hour than platform-sourced work, mainly because platform fees and client acquisition risk get priced in on marketplaces like Upwork.",
+      },
+      { type: "heading", text: "Per-project rates" },
+      {
+        type: "table",
+        headers: ["Project type", "Rate"],
+        rows: [
+          ["Landing page / temporary homepage", "$300–600"],
+          ["Standard business site (Elementor/Divi)", "$600–1,500"],
+          ["Custom theme with ACF flexible content", "$1,500–4,000"],
+          ["WooCommerce store", "$1,500–5,000"],
+          ["Site migration + rebuild", "$2,000–5,000+"],
+          ["Technical SEO audit + implementation", "$400–1,000"],
+        ],
+      },
+      { type: "heading", text: "Monthly retainer rates" },
+      {
+        type: "list",
+        items: [
+          "Part-time (20 hrs/week), international: $1,200–2,400/month (~₱68k–135k)",
+          "Part-time, PH-based company: ₱25k–45k/month",
+          "Maintenance / support retainer, per site: $150–400/month",
+        ],
+      },
+      { type: "heading", text: "What actually moves the price" },
+      {
+        type: "list",
+        items: [
+          "Custom ACF theme vs. page builder — custom code costs more upfront but ships less bloat long-term",
+          "WooCommerce or other complex functionality vs. a static business site",
+          "Whether you're hiring locally in the Philippines, hiring an international freelancer direct, or sourcing through a platform",
+          "One-off project vs. ongoing retainer — retainers are priced for predictable monthly work, not per-task",
+        ],
+      },
+      { type: "heading", text: "My honest take" },
+      {
+        type: "paragraph",
+        text: "If a quote for a standard WordPress business site comes in well under $600 or ₱25,000, ask what's being cut — usually it's either a page builder stretched past what it's good at, or no real testing or SEO setup before launch. On the other end, a five-figure quote for a simple brochure site is a sign you're paying for agency overhead rather than the actual build. These ranges reflect what real projects in my portfolio cost, not a rate card built to look competitive.",
       },
     ],
   },

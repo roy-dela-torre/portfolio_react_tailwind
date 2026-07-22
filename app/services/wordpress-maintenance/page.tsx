@@ -7,6 +7,7 @@ const service = serviceDetails["wordpress-maintenance"];
 export const metadata: Metadata = {
   title: service.metaTitle,
   description: service.metaDescription,
+  keywords: service.keywords,
   alternates: {
     canonical: "/services/wordpress-maintenance",
   },

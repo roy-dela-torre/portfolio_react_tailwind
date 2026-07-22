@@ -7,6 +7,7 @@ const service = serviceDetails["shopify-development"];
 export const metadata: Metadata = {
   title: service.metaTitle,
   description: service.metaDescription,
+  keywords: service.keywords,
   alternates: {
     canonical: "/services/shopify-development",
   },
