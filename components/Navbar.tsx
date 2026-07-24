@@ -34,8 +34,8 @@ export default function Navbar() {
           <Image
             src="/assets/img/favicon.png"
             alt=""
-            width={36}
-            height={36}
+            width={40}
+            height={40}
             className="h-9 w-9 rounded-full"
             priority
           />

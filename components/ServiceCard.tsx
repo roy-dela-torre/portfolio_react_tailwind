@@ -10,7 +10,7 @@ export default function ServiceCard({ title, description, href }: Service) {
       <h3 className="text-xl font-semibold text-white transition-colors group-hover:text-accent">
         {title}
       </h3>
-      <p className="mt-4 text-sm leading-relaxed text-white/60">{description}</p>
+      <p className="mt-4 text-sm leading-relaxed text-white/60 line-clamp-4">{description}</p>
       <span className="mt-6 inline-block text-sm text-accent">Learn more →</span>
     </Link>
   );

@@ -14,7 +14,7 @@ export default function ServicesSection() {
           </h2>
         </Reveal>
 
-        <Reveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal className="grid gap-6 grid-cols-1 lg:grid-cols-2">
           {services.map((service) => (
             <ServiceCard key={service.slug} {...service} />
           ))}
