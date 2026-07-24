@@ -11,10 +11,10 @@ export default function BlogPostCard({ slug, title, excerpt, publishedDate }: Bl
       <p className="text-sm uppercase tracking-wide text-white/50">
         <time dateTime={publishedDate}>{formatDate(publishedDate)}</time>
       </p>
-      <h3 className="mt-3 text-xl font-semibold text-white transition-colors group-hover:text-accent">
+      <h3 className="mt-3 text-xl font-semibold text-white transition-colors group-hover:text-accent line-clamp-2">
         {title}
       </h3>
-      <p className="mt-4 text-sm leading-relaxed text-white/60">{excerpt}</p>
+      <p className="mt-4 text-sm leading-relaxed text-white/60 line-clamp-5">{excerpt}</p>
       <span className="mt-6 inline-block text-sm text-accent">Read more →</span>
     </Link>
   );
