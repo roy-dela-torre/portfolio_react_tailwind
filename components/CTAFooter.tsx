@@ -10,7 +10,7 @@ export default function CTAFooter() {
 
   return (
     <footer id="contact" className="border-t border-white/10">
-      <div className="mx-auto max-w-6xl px-6 py-24 text-center md:py-32">
+      <div className="mx-auto max-w-6xl px-6 py-18 text-center md:py-24">
         <Reveal stagger={false}>
           <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-1.5 text-xs uppercase tracking-widest text-white/70">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
