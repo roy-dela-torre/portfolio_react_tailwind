@@ -157,13 +157,13 @@ export type ExperienceEntry = {
 };
 
 export const experience: ExperienceEntry[] = [
-  {
-    company: "Clarvida Global Business Center",
-    role: "Web Developer",
-    dates: "May 5, 2026 — Present",
-    description:
-      "Building and maintaining custom WordPress sites while leading on-page and technical SEO to grow organic traffic.",
-  },
+  // {
+  //   company: "Clarvida Global Business Center",
+  //   role: "Web Developer",
+  //   dates: "May 5, 2026 — Present",
+  //   description:
+  //     "Building and maintaining custom WordPress sites while leading on-page and technical SEO to grow organic traffic.",
+  // },
   {
     company: "Teqon Web Solutions B.V.",
     role: "WordPress Developer (Part-time)",
