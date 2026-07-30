@@ -235,6 +235,14 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    id: 15,
+    title: "Raize Marketing",
+    description:
+      "Site for an SEO agency in the Philippines, covering traditional SEO and AI Engine Optimization (AEO).",
+    imageUrl: "/assets/img/raizemarketing.jpg",
+    liveUrl: "https://raizemarketing.com/",
+  },
 ];
 
 export type Stat = {
