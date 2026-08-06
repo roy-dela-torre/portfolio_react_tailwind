@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaGithub, FaGlobe, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import type { TeamMember } from "@/data/content";
@@ -10,26 +11,38 @@ const socialIcons = {
   github: { Icon: FaGithub, label: "GitHub" },
 } as const;
 
-export default function TeamCard({ name, role, website, socials }: TeamMember) {
+export default function TeamCard({ name, role, photo, website, socials }: TeamMember) {
   const socialEntries = (Object.keys(socialIcons) as (keyof typeof socialIcons)[]).filter(
     (key) => socials[key],
   );
 
   return (
     <article className="flex h-full w-[85%] shrink-0 snap-start flex-col items-center rounded-2xl border border-white/10 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 sm:w-[46%] lg:w-[30%]">
-      <TeamAvatarPlaceholder name={name} />
+      {photo ? (
+        <Image
+          src={photo}
+          alt={name}
+          width={80}
+          height={80}
+          className="h-20 w-20 rounded-full object-cover"
+        />
+      ) : (
+        <TeamAvatarPlaceholder name={name} />
+      )}
       <h2 className="mt-5 text-lg font-semibold text-white">{name}</h2>
       <p className="mt-1 text-sm text-white/60">{role}</p>
 
-      <a
-        href={website}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-1.5 text-xs text-white/70 transition-colors hover:border-accent/50 hover:text-accent"
-      >
-        <FaGlobe aria-hidden="true" className="h-3.5 w-3.5" />
-        Website
-      </a>
+      {website && (
+        <a
+          href={website}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-1.5 text-xs text-white/70 transition-colors hover:border-accent/50 hover:text-accent"
+        >
+          <FaGlobe aria-hidden="true" className="h-3.5 w-3.5" />
+          Website
+        </a>
+      )}
 
       {socialEntries.length > 0 && (
         <ul className="mt-4 flex items-center gap-3">

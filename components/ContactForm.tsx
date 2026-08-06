@@ -109,6 +109,13 @@ export default function ContactForm() {
       noValidate
       className="mx-auto max-w-md space-y-5 text-left"
     >
+      {/* data-lpignore/data-1p-ignore/data-bwignore tell LastPass, 1Password,
+          and Bitwarden to skip these fields entirely. Without them, the
+          extensions inject an icon div into the wrapper before React
+          hydrates — a structural mismatch suppressHydrationWarning can't
+          silence (it only covers text/attribute differences on the element
+          itself, not an extra child node), so it's better to stop the
+          injection at the source. */}
       <div>
         <label htmlFor="contact-name" className="mb-2 block text-sm text-white/70">
           Name
@@ -122,6 +129,9 @@ export default function ContactForm() {
           aria-invalid={Boolean(errors.name)}
           aria-describedby={errors.name ? "contact-name-error" : undefined}
           autoComplete="name"
+          data-lpignore="true"
+          data-1p-ignore="true"
+          data-bwignore="true"
           placeholder="Your name"
           className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-white/30 focus:border-accent"
         />
@@ -145,6 +155,9 @@ export default function ContactForm() {
           aria-invalid={Boolean(errors.email)}
           aria-describedby={errors.email ? "contact-email-error" : undefined}
           autoComplete="email"
+          data-lpignore="true"
+          data-1p-ignore="true"
+          data-bwignore="true"
           placeholder="you@example.com"
           className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-white/30 focus:border-accent"
         />
@@ -167,6 +180,9 @@ export default function ContactForm() {
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? "contact-message-error" : undefined}
           rows={5}
+          data-lpignore="true"
+          data-1p-ignore="true"
+          data-bwignore="true"
           placeholder="What are you looking to build?"
           className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-white/30 focus:border-accent"
         />

@@ -79,5 +79,6 @@ public/assets/img/cache/
 # Next.js build output
 .next
 *.zip
+*.tsbuildinfo
 
 *out/

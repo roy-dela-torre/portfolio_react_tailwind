@@ -19,7 +19,7 @@ export default function TeamSection() {
         </Reveal>
       </div>
 
-      <div className="mt-12">
+      <div className="mx-auto mt-12 max-w-6xl px-6">
         <TeamCarousel members={teamMembers} />
       </div>
     </section>

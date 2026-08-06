@@ -63,6 +63,7 @@ export const navLinks = [
   { label: "Skills", href: "/#skills" },
   { label: "Process", href: "/process" },
   { label: "Projects", href: "/projects" },
+  { label: "Team", href: "/team" },
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
 ];
@@ -76,6 +77,7 @@ export const sitemapLinks = [
   { label: "Experience", href: "/experience" },
   { label: "Process", href: "/process" },
   { label: "Projects", href: "/projects" },
+  { label: "Team", href: "/team" },
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
 ];
@@ -950,14 +952,13 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
-// PLACEHOLDER — every name, role pairing, website, and social link below is
-// a template stand-in. Replace with real people, real URLs, and swap
-// TeamAvatarPlaceholder for a real next/image photo per person before this
-// page is linked from anywhere public.
+// No headshots yet, so cards fall back to initials via TeamAvatarPlaceholder
+// until real photos are available.
 export type TeamMember = {
   name: string;
   role: string;
-  website: string;
+  photo?: string;
+  website?: string;
   socials: {
     linkedin?: string;
     twitter?: string;
@@ -968,57 +969,49 @@ export type TeamMember = {
 
 export const teamMembers: TeamMember[] = [
   {
-    name: "Maria Santos",
-    role: "Designer",
-    website: "https://example.com",
-    socials: { linkedin: "#", instagram: "#" },
+    name: "Irish Enriquez",
+    role: "SEO Growth Specialist",
+    photo: "/assets/img/irisha-enriquez.jpg",
+    socials: { linkedin: "https://www.linkedin.com/in/irisha-enriquez/" },
   },
   {
-    name: "Carlo Reyes",
-    role: "Account Manager",
-    website: "https://example.com",
-    socials: { linkedin: "#" },
+    name: "Christian Santos",
+    role: "Senior Web Developer · WordPress Developer",
+    socials: { linkedin: "https://www.linkedin.com/in/christiancruzsantos/" },
   },
   {
-    name: "Angela Cruz",
-    role: "SEO Specialist",
-    website: "https://example.com",
-    socials: { linkedin: "#", twitter: "#" },
+    name: "Karl Isaiah L. Fauni",
+    role: "Link Builder",
+    socials: { linkedin: "https://www.linkedin.com/in/karl-isaiah-l-fauni-12a295331/" },
   },
   {
-    name: "Miguel Torres",
-    role: "Project Manager",
-    website: "https://example.com",
-    socials: { linkedin: "#" },
+    name: "Jenevieve Gudin",
+    role: "SEO Content Specialist · Content Manager · Content Writer",
+    socials: { linkedin: "https://www.linkedin.com/in/jenevievegudin/" },
   },
   {
-    name: "Diego Ramos",
-    role: "Backlinks/Outreach Specialist",
-    website: "https://example.com",
-    socials: { linkedin: "#", twitter: "#" },
+    name: "Michael D.",
+    role: "Production & Technical Support Engineer · Web Developer",
+    socials: { linkedin: "https://www.linkedin.com/in/michael-d-17510182/" },
   },
   {
-    name: "Patricia Lim",
-    role: "Accountant",
-    website: "https://example.com",
-    socials: { linkedin: "#" },
+    name: "Kim Buganan",
+    role: "Account Manager · Project Manager",
+    socials: { linkedin: "https://www.linkedin.com/in/kim-buganan-40a889249/" },
   },
   {
-    name: "Sophia Garcia",
-    role: "Writer",
-    website: "https://example.com",
-    socials: { linkedin: "#", twitter: "#", instagram: "#" },
+    name: "Alexis Yabut",
+    role: "SEO & AI Solutions Account Manager",
+    socials: { linkedin: "https://www.linkedin.com/in/alexisyabut/" },
   },
   {
-    name: "Daniel Aquino",
-    role: "Developer",
-    website: "https://example.com",
-    socials: { linkedin: "#", github: "#" },
+    name: "Maynard Cielo",
+    role: "Junior Software Developer",
+    socials: { linkedin: "https://www.linkedin.com/in/maynard-cielo-78951519b/" },
   },
   {
-    name: "Rafael Bautista",
-    role: "Developer",
-    website: "https://example.com",
-    socials: { linkedin: "#", github: "#" },
+    name: "Christian Louie Cardozo",
+    role: "UX/UI Designer & Developer",
+    socials: { linkedin: "https://www.linkedin.com/in/chrizlou/" },
   },
 ];
