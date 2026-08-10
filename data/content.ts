@@ -27,9 +27,9 @@ import { FaPuzzlePiece, FaPalette, FaFrog, FaLinkedin, FaGithub } from "react-ic
 export const siteConfig = {
   name: "Roy De La Torre",
   shortName: "Roy",
-  title: "Roy De La Torre — WordPress Developer & SEO Specialist | Philippines",
+  title: "WordPress Developer Philippines | Roy De La Torre",
   description:
-    "Roy De La Torre is a WordPress developer and SEO specialist based in the Philippines, building fast, accessible, custom WordPress and WooCommerce sites and driving organic growth through technical SEO.",
+    "Freelance WordPress developer & SEO specialist in the Philippines. Custom sites from $300, 100/100 PageSpeed, 3+ years experience.",
   url: "https://roydetorre.com",
   location: "Metro Manila, Philippines",
   areaServed: ["Metro Manila, Philippines", "Philippines", "Worldwide"],
@@ -42,6 +42,8 @@ export const siteConfig = {
     "Shopify developer Philippines",
     "WooCommerce developer Philippines",
     "technical SEO Philippines",
+    "WordPress maintenance Philippines",
+    "WordPress developer rates Philippines",
   ],
   googleAnalyticsId: "G-WDV14PZ98M",
   social: {
@@ -605,9 +607,9 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
   seo: {
     slug: "seo",
     title: "SEO Services",
-    metaTitle: "SEO Services Philippines | Roy De La Torre — SEO Specialist",
+    metaTitle: "SEO Services & Rates Philippines | Roy De La Torre",
     metaDescription:
-      "SEO specialist in the Philippines offering technical SEO audits, on-page optimization, and Core Web Vitals fixes for WordPress and custom sites.",
+      "SEO specialist in the Philippines. Technical audits, Core Web Vitals fixes & on-page SEO from $250. Rates and past results included.",
     keywords: [
       "SEO specialist Philippines",
       "technical SEO audit Philippines",
@@ -615,6 +617,8 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
       "freelance SEO consultant Metro Manila",
       "Core Web Vitals optimization Philippines",
       "affordable SEO services for small business Philippines",
+      "SEO rates Philippines",
+      "SEO pricing Philippines",
     ],
     h1: "SEO Services in the Philippines",
     intro:
@@ -721,9 +725,9 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
   "wordpress-maintenance": {
     slug: "wordpress-maintenance",
     title: "WordPress Security & Hardening",
-    metaTitle: "WordPress Security Hardening Philippines | Roy De La Torre",
+    metaTitle: "WordPress Maintenance Philippines | From $150/mo",
     metaDescription:
-      "WordPress security hardening, malware cleanup, and ongoing monitoring for businesses in the Philippines — stop attacks before they cost you customers.",
+      "WordPress maintenance & security services in the Philippines. Updates, backups, malware cleanup & monitoring from $150/month.",
     keywords: [
       "WordPress security services Philippines",
       "WordPress security audit Philippines",
@@ -731,6 +735,9 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
       "WordPress hardening Philippines",
       "WordPress firewall setup Philippines",
       "WooCommerce security Philippines",
+      "WordPress maintenance Philippines",
+      "WordPress maintenance services Philippines",
+      "WP maintenance Philippines",
     ],
     h1: "WordPress Security & Hardening Services in the Philippines",
     intro:

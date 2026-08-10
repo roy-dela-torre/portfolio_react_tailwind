@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import Pricing from "@/components/Pricing";
 
-const title = "Pricing";
+const title = "WordPress & SEO Rates Philippines";
 const description =
-  "Hourly, retainer, and per-project rates for WordPress development, WooCommerce builds, Shopify development, site migrations, and technical SEO work with Roy De La Torre.";
+  "Real WordPress developer and SEO rates in the Philippines: ₱500-900/hr local, $15-30/hr international. Transparent pricing, no surprises.";
 const keywords = [
   "WordPress developer rates Philippines",
   "SEO services pricing Philippines",
   "Shopify developer rates Philippines",
   "freelance web developer rates Metro Manila",
+  "WordPress developer salary Philippines",
+  "WordPress developer price",
+  "SEO rates Philippines",
 ];
 
 export const metadata: Metadata = {
