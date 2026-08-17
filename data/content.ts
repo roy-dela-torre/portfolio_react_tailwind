@@ -65,7 +65,6 @@ export const navLinks = [
   { label: "Skills", href: "/#skills" },
   { label: "Process", href: "/process" },
   { label: "Projects", href: "/projects" },
-  { label: "Team", href: "/team" },
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
 ];
@@ -79,7 +78,6 @@ export const sitemapLinks = [
   { label: "Experience", href: "/experience" },
   { label: "Process", href: "/process" },
   { label: "Projects", href: "/projects" },
-  { label: "Team", href: "/team" },
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
 ];
