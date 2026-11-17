@@ -1,6 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
+  // The /admin blog dashboard writes to a JSON file on disk, which only
+  // works against a local dev server — Vercel's filesystem is read-only in
+  // production, so the route would just show a UI that silently fails to
+  // save. Blocking it here means it 404s instead of shipping a broken tool.
+  if (request.nextUrl.pathname.startsWith("/admin") && process.env.NODE_ENV === "production") {
+    return new NextResponse(null, { status: 404 });
+  }
+
   const nonce = btoa(crypto.randomUUID());
 
   // 'unsafe-eval' is only added outside production: Next.js dev-mode Fast

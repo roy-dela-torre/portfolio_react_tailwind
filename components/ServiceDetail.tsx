@@ -94,6 +94,37 @@ export default async function ServiceDetail({ service }: { service: ServiceDetai
         </Reveal>
       </section>
 
+      {service.sections?.map((section) => (
+        <section key={section.heading} className="mx-auto max-w-3xl px-6 pb-16 md:pb-20">
+          <Reveal stagger={false}>
+            <h2 className="mb-6 text-xl font-semibold text-white md:text-2xl">{section.heading}</h2>
+            {section.paragraphs?.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="mb-4 text-sm leading-relaxed text-white/70 md:text-base"
+              >
+                {paragraph}
+              </p>
+            ))}
+            {section.items && (
+              <ul className="space-y-3">
+                {section.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-3 text-sm leading-relaxed text-white/70 md:text-base"
+                  >
+                    <span className="text-accent" aria-hidden="true">
+                      —
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </Reveal>
+        </section>
+      ))}
+
       <section className="mx-auto max-w-3xl px-6 pb-16 md:pb-20">
         <Reveal stagger={false}>
           <h2 className="mb-4 text-xl font-semibold text-white md:text-2xl">How I Work</h2>
@@ -105,6 +136,17 @@ export default async function ServiceDetail({ service }: { service: ServiceDetai
             </Link>
             .
           </p>
+          {service.relatedLinks && (
+            <ul className="mt-6 space-y-2">
+              {service.relatedLinks.map((link) => (
+                <li key={link.href} className="text-sm md:text-base">
+                  <Link href={link.href} className="text-accent underline underline-offset-4">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </Reveal>
       </section>
 

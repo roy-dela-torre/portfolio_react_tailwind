@@ -110,13 +110,15 @@ export default function ContactForm() {
       className="mx-auto max-w-md space-y-5 text-left"
     >
       {/* data-lpignore/data-1p-ignore/data-bwignore tell LastPass, 1Password,
-          and Bitwarden to skip these fields entirely. Without them, the
-          extensions inject an icon div into the wrapper before React
-          hydrates — a structural mismatch suppressHydrationWarning can't
-          silence (it only covers text/attribute differences on the element
-          itself, not an extra child node), so it's better to stop the
-          injection at the source. */}
-      <div>
+          and Bitwarden to skip these fields entirely — that's the real fix.
+          suppressHydrationWarning on the wrapper divs below is a second,
+          best-effort layer: LastPass's icon-root anchor sometimes still
+          lands on the nearest positioned ancestor even with lpignore set on
+          the input itself. suppressHydrationWarning doesn't officially cover
+          extra injected child nodes (only text/attribute diffs on the node
+          it's set on), so this may not silence every case, but it's a
+          no-risk addition scoped to just these three wrappers. */}
+      <div suppressHydrationWarning>
         <label htmlFor="contact-name" className="mb-2 block text-sm text-white/70">
           Name
         </label>
@@ -142,7 +144,7 @@ export default function ContactForm() {
         )}
       </div>
 
-      <div>
+      <div suppressHydrationWarning>
         <label htmlFor="contact-email" className="mb-2 block text-sm text-white/70">
           Email
         </label>
@@ -168,7 +170,7 @@ export default function ContactForm() {
         )}
       </div>
 
-      <div>
+      <div suppressHydrationWarning>
         <label htmlFor="contact-message" className="mb-2 block text-sm text-white/70">
           Message
         </label>

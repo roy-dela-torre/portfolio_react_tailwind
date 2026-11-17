@@ -1,0 +1,447 @@
+[
+  {
+    "slug": "custom-themes-vs-page-builders",
+    "title": "WordPress Custom Themes vs Page Builders: What 4 Years of Agency Work Taught Me",
+    "metaTitle": "WordPress Custom Themes vs Page Builders",
+    "metaDescription": "A WordPress developer's honest breakdown of when to use Elementor or Divi versus a custom ACF theme, with real cost and timeline ranges.",
+    "keywords": [
+      "WordPress page builder vs custom theme",
+      "Elementor vs custom WordPress theme",
+      "ACF WordPress theme cost",
+      "WordPress developer Philippines"
+    ],
+    "excerpt": "Page builders get a site live faster and cheaper; custom ACF themes cost more and take longer but pay off in speed and long-term flexibility. Here's how I actually decide between them.",
+    "publishedDate": "2026-07-13",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Page builders like Elementor and Divi get a project live faster and cost less upfront; custom WordPress themes built with ACF cost more and take longer, but pay off in load speed, long-term maintainability, and how easily a site can grow. Here's how I actually decide between them on client work."
+      },
+      {
+        "type": "heading",
+        "text": "What's actually different between a page builder and a custom theme?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Page builders like Elementor Pro and Divi generate their own markup and CSS on top of WordPress, and give you a visual, drag-and-drop editor. A custom theme built with Advanced Custom Fields (ACF) has hand-written templates and only ships the CSS and JS the site actually needs — nothing extra just because the builder might need it for some other page."
+      },
+      {
+        "type": "heading",
+        "text": "When a page builder is the right call"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Budget is tight and the site needs to launch fast — a builder gets simple sites live in days, not weeks",
+          "The client (or their team) wants to edit pages themselves after launch, without touching code",
+          "The site is mostly static marketing pages without complex custom functionality",
+          "It's a landing page or temporary homepage that's likely to be redesigned again soon anyway"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "When a custom ACF theme is worth the extra cost"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Page speed and Core Web Vitals matter — no page builder ships as little code as a hand-built theme",
+          "The site needs custom content structures (flexible content blocks, repeaters) that a generic builder handles awkwardly",
+          "It's a WooCommerce store or has other complex functionality where builder overhead compounds",
+          "The client plans to keep and grow the site for years, not months"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Page builder vs. custom theme, side by side"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "",
+          "Page Builder (Elementor/Divi)",
+          "Custom ACF Theme"
+        ],
+        "rows": [
+          [
+            "Typical cost",
+            "$600–1,500",
+            "$1,500–4,000"
+          ],
+          [
+            "Turnaround",
+            "Usually under 2 weeks",
+            "Usually 4–8 weeks"
+          ],
+          [
+            "Page speed ceiling",
+            "Good, capped by builder overhead",
+            "Higher — only ships what the site needs"
+          ],
+          [
+            "Best for",
+            "Small sites, self-editing clients, quick launches",
+            "WooCommerce stores, custom content needs, long-term sites"
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "What I actually recommend to clients"
+      },
+      {
+        "type": "paragraph",
+        "text": "I don't default to one or the other — I ask about budget, timeline, and how long the client plans to keep the site before recommending a page builder build or a custom ACF theme. Most of my work spans both: Elementor Pro and Divi when speed or budget calls for it, fully custom themes when performance or long-term flexibility matters more. If you're not sure which fits your project, that's the first thing I sort out on a call."
+      }
+    ]
+  },
+  {
+    "slug": "wordpress-developer-cost-philippines",
+    "title": "How Much Does a WordPress Developer Cost in the Philippines? (2026 Rates)",
+    "metaTitle": "How Much Does a WordPress Developer Cost in the Philippines?",
+    "metaDescription": "Real 2026 hourly, retainer, and per-project rate ranges for hiring a WordPress developer in the Philippines, for both local and international clients.",
+    "keywords": [
+      "WordPress developer cost Philippines",
+      "WordPress developer rates Philippines",
+      "how much does a WordPress website cost Philippines",
+      "freelance WordPress developer pricing Philippines",
+      "hire WordPress developer Philippines"
+    ],
+    "excerpt": "Real rate ranges for hiring a WordPress developer in the Philippines in 2026 — hourly, retainer, and per-project — broken down by whether you're a local business or hiring internationally.",
+    "publishedDate": "2026-07-21",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "\"How much does a WordPress developer cost?\" is one of the first questions I get from prospective clients, and the honest answer is: it depends on where you're based, how you're hiring, and what you need built. Below are the actual rate ranges I quote in 2026, broken out by engagement type, so you can budget before we even get on a call."
+      },
+      {
+        "type": "heading",
+        "text": "Hourly rates"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Client type",
+          "Rate"
+        ],
+        "rows": [
+          [
+            "Local PH clients",
+            "₱500–₱900/hr (~$9–16)"
+          ],
+          [
+            "International clients (US/AU/UK, direct)",
+            "$15–30/hr"
+          ],
+          [
+            "Agencies / platforms (Upwork, OnlineJobs.ph)",
+            "$8–15/hr"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "International direct clients pay more per hour than platform-sourced work, mainly because platform fees and client acquisition risk get priced in on marketplaces like Upwork."
+      },
+      {
+        "type": "heading",
+        "text": "Per-project rates"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Project type",
+          "Rate"
+        ],
+        "rows": [
+          [
+            "Landing page / temporary homepage",
+            "$300–600"
+          ],
+          [
+            "Standard business site (Elementor/Divi)",
+            "$600–1,500"
+          ],
+          [
+            "Custom theme with ACF flexible content",
+            "$1,500–4,000"
+          ],
+          [
+            "WooCommerce store",
+            "$1,500–5,000"
+          ],
+          [
+            "Site migration + rebuild",
+            "$2,000–5,000+"
+          ],
+          [
+            "Technical SEO audit + implementation",
+            "$400–1,000"
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Monthly retainer rates"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Part-time (20 hrs/week), international: $1,200–2,400/month (~₱68k–135k)",
+          "Part-time, PH-based company: ₱25k–45k/month",
+          "Maintenance / support retainer, per site: $150–400/month"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "What actually moves the price"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Custom ACF theme vs. page builder — custom code costs more upfront but ships less bloat long-term",
+          "WooCommerce or other complex functionality vs. a static business site",
+          "Whether you're hiring locally in the Philippines, hiring an international freelancer direct, or sourcing through a platform",
+          "One-off project vs. ongoing retainer — retainers are priced for predictable monthly work, not per-task"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "My honest take"
+      },
+      {
+        "type": "paragraph",
+        "text": "If a quote for a standard WordPress business site comes in well under $600 or ₱25,000, ask what's being cut — usually it's either a page builder stretched past what it's good at, or no real testing or SEO setup before launch. On the other end, a five-figure quote for a simple brochure site is a sign you're paying for agency overhead rather than the actual build. These ranges reflect what real projects in my portfolio cost, not a rate card built to look competitive."
+      }
+    ]
+  },
+  {
+    "slug": "how-to-update-wordpress-safely",
+    "title": "How to Update WordPress Safely: A Developer's Plugin, PHP & Core Checklist",
+    "metaTitle": "How to Update WordPress Safely: Plugin, PHP & Core Checklist",
+    "metaDescription": "A WordPress developer's real pre-update checklist for plugins, PHP, and core — what to read first, where to track update news, and the red flags that mean wait.",
+    "keywords": [
+      "how to update WordPress safely",
+      "WordPress plugin update checklist",
+      "when to update PHP version WordPress",
+      "WordPress core update guide",
+      "WordPress maintenance best practices"
+    ],
+    "excerpt": "Updating WordPress isn't just clicking \"Update Now.\" Here's the pre-update checklist I actually run before touching plugins, PHP, or core on a live client site — and where I get the news that tells me when to wait.",
+    "publishedDate": "2026-08-17",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Most site-breaking WordPress issues I get called in to fix didn't come from a hack — they came from an update. A plugin update that dropped support for an old PHP version, a core update that exposed an incompatible plugin, a PHP bump that silently broke a theme function. None of this is random; it's what happens when updates get clicked without reading anything first. Here's the actual checklist I run."
+      },
+      {
+        "type": "heading",
+        "text": "Read before you update — every time"
+      },
+      {
+        "type": "list",
+        "items": [
+          "The plugin's changelog for that specific version — not just \"bug fixes,\" look for the words \"breaking,\" \"deprecated,\" \"removed,\" or \"requires\"",
+          "\"Tested up to\" WordPress version and \"Requires PHP\" version on the plugin's page — if your site is ahead of both, that's a signal, not a guarantee",
+          "The plugin's support forum or GitHub issues, filtered to the last 7–14 days, for anyone reporting the new version broke something",
+          "Whether the version number jumped a major digit (2.x to 3.x) — that's the industry convention for \"expect breaking changes,\" even if the changelog undersells it"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Where I actually get update news"
+      },
+      {
+        "type": "list",
+        "items": [
+          "WordPress.org News (wordpress.org/news) for core release announcements and security releases",
+          "The plugin's own changelog tab on wordpress.org, not the marketing copy on its homepage",
+          "Patchstack and WPScan's vulnerability databases — catches security-driven updates before they hit mainstream news",
+          "PHP.net's supported-versions page, so I know a PHP version's active support and end-of-life dates before a host forces a bump",
+          "The plugin author's own blog or X/Twitter account, for major plugins where breaking changes get announced ahead of release"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "The update order that avoids most disasters"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Full backup — files and database — before touching anything, confirmed restorable, not just \"a backup exists somewhere\"",
+          "Test the update on a staging copy first, especially for core, PHP, or any plugin handling payments, forms, or custom fields",
+          "Update plugins one at a time, not in bulk — bulk updates make it much harder to tell which plugin broke something if the site breaks",
+          "Update PHP version separately from plugin/core updates, and only after checking every active plugin's declared PHP compatibility",
+          "Update core last, after confirming the active theme and plugins are already fine on the new PHP version"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Red flags that mean wait, don't update yet"
+      },
+      {
+        "type": "list",
+        "items": [
+          "The plugin hasn't been updated in 12+ months and is only tested up to an old WordPress version — a forced update later will be worse, but rushing now isn't the fix either",
+          "The new version dropped within the last few days and support threads are already reporting issues",
+          "A PHP version bump with no compatibility statement from a business-critical plugin (payments, booking, membership)",
+          "You don't have a tested, restorable backup — this alone should stop any update on a live site"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Safe to update now vs. test on staging first"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Situation",
+          "What I do"
+        ],
+        "rows": [
+          [
+            "Security patch, no version jump, active support threads are quiet",
+            "Update directly, backup first"
+          ],
+          [
+            "Major version bump (breaking changes flagged in changelog)",
+            "Staging first, always"
+          ],
+          [
+            "PHP version bump on a site with payment or booking plugins",
+            "Staging first, check every plugin's PHP compatibility"
+          ],
+          [
+            "Plugin update on a site with no recent backup",
+            "Backup first — no exceptions"
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "What this looks like on a maintenance retainer"
+      },
+      {
+        "type": "paragraph",
+        "text": "This is exactly what I run on client maintenance retainers — reading changelogs, checking PHP compatibility, staging-testing anything that touches core or payments, and only then pushing to production. It's slower than clicking \"Update Now\" on everything at once, but it's the difference between a maintenance retainer and an emergency fix call."
+      }
+    ]
+  },
+  {
+    "slug": "seo-rates-philippines",
+    "title": "SEO Rates & Packages in the Philippines (2026): What You Actually Pay For",
+    "metaTitle": "SEO Rates & Packages Philippines (2026): Real Prices",
+    "metaDescription": "SEO pricing in the Philippines for 2026: audit, speed optimization and monthly SEO package rates in pesos and dollars, plus what each one actually includes.",
+    "keywords": [
+      "SEO rates Philippines",
+      "SEO pricing Philippines",
+      "SEO packages Philippines",
+      "SEO rates and packages in the Philippines",
+      "how much does SEO cost Philippines",
+      "affordable SEO services Philippines"
+    ],
+    "excerpt": "Real 2026 SEO rates in the Philippines: what a technical SEO audit, page speed work, and a monthly SEO package cost, and how to tell a fair quote from one that will waste your budget.",
+    "publishedDate": "2026-11-17",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "SEO in the Philippines costs anywhere from a few thousand pesos to six figures a month, and the price alone tells you very little. Below are the rates I quote in 2026 as a Metro Manila-based SEO specialist, broken down by package, plus what each one includes so you can compare quotes on what's actually delivered."
+      },
+      {
+        "type": "heading",
+        "text": "SEO rates in the Philippines at a glance"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "SEO package",
+          "Rate",
+          "Best for"
+        ],
+        "rows": [
+          [
+            "Technical SEO audit + implementation",
+            "$400–1,000 (~₱22,500–56,000)",
+            "Sites that aren't showing up in Google and nobody knows why"
+          ],
+          [
+            "PageSpeed / Core Web Vitals optimization",
+            "$250–600 (~₱14,000–34,000)",
+            "Slow sites, failing Core Web Vitals in Search Console"
+          ],
+          [
+            "Ongoing SEO, billed hourly (local PH clients)",
+            "₱500–900/hr",
+            "Monthly fixes, monitoring, and on-page updates"
+          ],
+          [
+            "Ongoing SEO, billed hourly (international clients)",
+            "$15–30/hr",
+            "Overseas businesses hiring direct"
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "What's in a technical SEO audit"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Crawl the whole site with Screaming Frog to find broken links, redirect chains, duplicate titles, and pages Google can't reach",
+          "Review Google Search Console: which pages are indexed, which are excluded, and why",
+          "Check titles, meta descriptions, and heading structure against what people actually search for",
+          "Add or fix structured data (schema) so Google understands the business, services, and FAQs",
+          "Fix the issues found, not just hand over a PDF. The implementation is part of the price"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "What a monthly SEO package should include"
+      },
+      {
+        "type": "paragraph",
+        "text": "Most Philippine small businesses don't need a big monthly agency retainer. They need a few hours each month of someone checking Search Console, fixing what broke, and improving the pages that are close to ranking. At ₱500–900/hr, 10 hours a month comes to roughly ₱5,000–9,000. That time typically covers:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Monthly Search Console review: new errors, pages dropping out of the index, queries gaining impressions",
+          "Rewriting titles and descriptions on pages that get impressions but no clicks",
+          "Internal linking from new content to the pages you want to rank",
+          "Keeping plugins, schema, and sitemaps working after site updates",
+          "A short report in plain language: what changed, what improved, what's next"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Red flags in cheap SEO packages"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Guaranteed page-one rankings. Nobody controls Google's results, and anyone who promises this is guessing or lying",
+          "\"500 backlinks a month\" for a few thousand pesos. Bulk links from spam sites can get you penalized",
+          "No access to your own Search Console or Analytics. You should own your data",
+          "Reports full of vanity numbers but no list of what was actually changed on your site"
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "How long until SEO shows results?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Technical fixes like speed and indexing problems usually show up in Search Console within a few weeks. Ranking for competitive keywords takes months, especially for a new site. A healthy early sign is impressions climbing even before clicks do: it means Google is testing your pages for those searches."
+      },
+      {
+        "type": "heading",
+        "text": "Where to start"
+      },
+      {
+        "type": "paragraph",
+        "text": "If you're not sure what your site needs, start with a technical SEO audit. You'll get a clear list of what's holding the site back and what it costs to fix, before committing to anything monthly. See my SEO services page for the full scope, or the pricing page for every rate in one place."
+      }
+    ]
+  }
+]

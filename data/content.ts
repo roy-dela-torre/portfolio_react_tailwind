@@ -1,4 +1,5 @@
 import type { IconType } from "react-icons";
+import blogPostsData from "./blog-posts.json";
 import {
   SiWordpress,
   SiPhp,
@@ -454,9 +455,9 @@ export const services: Service[] = [
   },
   {
     slug: "maintenance",
-    title: "WordPress Security & Maintenance",
+    title: "WordPress Maintenance & Security",
     description:
-      "WordPress security is the job, not an afterthought. I harden sites against malware and brute-force attacks, clean up sites that are already compromised, and keep them updated and backed up — for businesses in Metro Manila and beyond.",
+      "Monthly WordPress maintenance for businesses in Metro Manila and beyond: safe plugin and core updates, tested backups, and uptime monitoring. I also harden sites against malware and brute-force attacks, and clean up sites that are already compromised.",
     href: "/services/wordpress-maintenance",
   },
 ];
@@ -534,6 +535,8 @@ export type ServiceDetailData = {
   h1: string;
   intro: string;
   whatsIncluded: string[];
+  sections?: { heading: string; paragraphs?: string[]; items?: string[] }[];
+  relatedLinks?: { label: string; href: string }[];
   faqs: FaqEntry[];
 };
 
@@ -544,7 +547,7 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
   "wordpress-development": {
     slug: "wordpress-development",
     title: "WordPress Development",
-    metaTitle: "WordPress Development Services Philippines | Roy De La Torre",
+    metaTitle: "WordPress Developer Philippines | Custom Themes & WooCommerce",
     metaDescription:
       "WordPress developer in the Philippines building custom themes, WooCommerce stores, and site migrations for local and international clients.",
     keywords: [
@@ -605,9 +608,9 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
   seo: {
     slug: "seo",
     title: "SEO Services",
-    metaTitle: "SEO Services & Rates Philippines | Roy De La Torre",
+    metaTitle: "SEO Services Philippines | Rates & Packages from ₱14k",
     metaDescription:
-      "SEO specialist in the Philippines. Technical audits, Core Web Vitals fixes & on-page SEO from $250. Rates and past results included.",
+      "SEO rates & packages in the Philippines: technical SEO audits, Core Web Vitals fixes and monthly on-page SEO by a Manila-based specialist. From $250 (~₱14k).",
     keywords: [
       "SEO specialist Philippines",
       "technical SEO audit Philippines",
@@ -617,6 +620,8 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
       "affordable SEO services for small business Philippines",
       "SEO rates Philippines",
       "SEO pricing Philippines",
+      "SEO packages Philippines",
+      "SEO rates and packages Philippines",
     ],
     h1: "SEO Services in the Philippines",
     intro:
@@ -628,7 +633,17 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
       "Structured data / schema markup implementation",
       "Google Search Console setup and ongoing monitoring",
     ],
+    relatedLinks: [
+      { label: "SEO rates & packages in the Philippines (full breakdown)", href: "/blog/seo-rates-philippines" },
+      { label: "See full pricing", href: "/pricing" },
+    ],
     faqs: [
+      {
+        question: "How much does SEO cost in the Philippines?",
+        answer:
+          "My SEO rates: a technical SEO audit with the fixes implemented runs $400–1,000 (about ₱22,500–56,000), page speed and Core Web Vitals work runs $250–600, and ongoing monthly SEO is billed at ₱500–900/hr for local clients or $15–30/hr for international clients.",
+        link: { label: "See the full SEO rates breakdown", href: "/blog/seo-rates-philippines" },
+      },
       {
         question: "Do you only do SEO for WordPress sites?",
         answer:
@@ -667,7 +682,7 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
   "shopify-development": {
     slug: "shopify-development",
     title: "Shopify Development",
-    metaTitle: "Shopify Developer Philippines | Custom Shopify Theme Development | Roy De La Torre",
+    metaTitle: "Shopify Developer Philippines | Custom Liquid Themes",
     metaDescription:
       "Shopify developer in the Philippines building custom Liquid themes, Shopify Plus and headless Shopify storefronts, and Shopify API/app integrations for local and international brands.",
     keywords: [
@@ -722,11 +737,15 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
   },
   "wordpress-maintenance": {
     slug: "wordpress-maintenance",
-    title: "WordPress Security & Hardening",
-    metaTitle: "WordPress Maintenance Philippines | From $150/mo",
+    title: "WordPress Maintenance & Security",
+    metaTitle: "WordPress Maintenance Philippines | Monthly Plans from ₱8.5k",
     metaDescription:
-      "WordPress maintenance & security services in the Philippines. Updates, backups, malware cleanup & monitoring from $150/month.",
+      "Monthly WP maintenance in the Philippines: safe plugin & core updates, daily backups, uptime monitoring and malware cleanup by a Manila-based developer. From $150/mo (~₱8.5k).",
     keywords: [
+      "WordPress maintenance services Philippines",
+      "WP site maintenance Philippines",
+      "WordPress website maintenance Philippines",
+      "WordPress maintenance cost Philippines",
       "WordPress security services Philippines",
       "WordPress security audit Philippines",
       "WordPress malware removal Philippines",
@@ -737,9 +756,45 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
       "WordPress maintenance services Philippines",
       "WP maintenance Philippines",
     ],
-    h1: "WordPress Security & Hardening Services in the Philippines",
+    h1: "WordPress Maintenance Services in the Philippines",
     intro:
-      "I'm Roy De La Torre, a WordPress developer based in Metro Manila, Philippines, specializing in WordPress security — hardening sites before they're attacked, and cleaning up the ones that already have been. Most WordPress compromises trace back to one of three things: an outdated plugin, a weak admin password, or an unpatched core file — closing that specific gap matters more than just wiping the infection and hoping it doesn't come back. Malware cleanup runs $300–800; ongoing security and maintenance retainers run $150–400/month per site.",
+      "I'm Roy De La Torre, a WordPress developer based in Metro Manila, Philippines, and I handle monthly WordPress maintenance for business sites here and abroad. That means updating plugins, themes, and core without breaking your live site, running backups that have actually been tested, monitoring uptime, and keeping the site secure. Most broken or hacked WordPress sites I'm asked to fix trace back to skipped maintenance: an outdated plugin, a weak admin password, or an unpatched core file. Maintenance retainers run $150–400/month per site (about ₱8,500–22,500), and one-off malware cleanup runs $300–800.",
+    sections: [
+      {
+        heading: "My Monthly WP Maintenance Checklist",
+        paragraphs: [
+          "Every site on a maintenance retainer gets the same routine each month, so nothing depends on someone remembering to log in:",
+        ],
+        items: [
+          "Back up the full site (files and database) before any change, and confirm the backup restores",
+          "Read changelogs, then update plugins one at a time. Major version jumps get tested on a staging copy first",
+          "Update WordPress core and the theme after checking PHP compatibility",
+          "Scan for malware and review failed logins and file changes",
+          "Check uptime history, page speed, and broken forms or checkout flows",
+          "Send you a short report of what was updated, what was fixed, and anything that needs a decision",
+        ],
+      },
+      {
+        heading: "Who This Is For",
+        items: [
+          "Philippine small businesses, clinics, law offices, and schools with a WordPress site but no in-house developer",
+          "WooCommerce stores where a broken update means lost orders",
+          "Agencies and overseas clients who want a Manila-based developer on retainer for sites they have already built",
+          "Sites that were hacked before and need to stay clean",
+        ],
+      },
+      {
+        heading: "Maintenance Retainer vs. Fixing Things When They Break",
+        paragraphs: [
+          "Emergency fixes after a hack or a failed update usually cost more than several months of maintenance, and the site is down while it's being fixed. A retainer catches the outdated plugin before it's exploited, and it catches the incompatible update on staging before your customers see it.",
+        ],
+      },
+    ],
+    relatedLinks: [
+      { label: "How I update WordPress safely (full checklist)", href: "/blog/how-to-update-wordpress-safely" },
+      { label: "WordPress developer rates in the Philippines", href: "/blog/wordpress-developer-cost-philippines" },
+      { label: "See full pricing", href: "/pricing" },
+    ],
     whatsIncluded: [
       "Security audits that identify the specific entry point — outdated plugin, weak credentials, or exposed file permissions — before it's exploited",
       "Malware removal and infected-file cleanup for sites that are already compromised",
@@ -749,6 +804,12 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
       "Uptime and intrusion monitoring, with priority response for retainer clients",
     ],
     faqs: [
+      {
+        question: "How much does WordPress maintenance cost in the Philippines?",
+        answer:
+          "My WordPress maintenance retainers run $150–400/month per site (about ₱8,500–22,500), depending on how many plugins the site runs, whether it's a WooCommerce store, and how much small-fix time you need each month. Malware cleanup for an already-hacked site is quoted separately at $300–800.",
+        link: { label: "See maintenance pricing", href: "/pricing" },
+      },
       {
         question: "My WordPress site was hacked or has malware — can you fix it?",
         answer:
@@ -808,154 +869,7 @@ export type BlogPost = {
   content: BlogContentBlock[];
 };
 
-// DRAFT copy, honest based on the real experience/pricing data already in
-// this file. One thing to double-check: the title says "4 Years of Agency
-// Work" — the experience list + stats.ts currently add up to "3+ Years
-// Experience." Confirm the rounding/timeframe you want before this is final.
-export const blogPosts: BlogPost[] = [
-  {
-    slug: "custom-themes-vs-page-builders",
-    title: "WordPress Custom Themes vs Page Builders: What 4 Years of Agency Work Taught Me",
-    metaTitle:
-      "WordPress Custom Themes vs Page Builders | Roy De La Torre",
-    metaDescription:
-      "A WordPress developer's honest breakdown of when to use Elementor or Divi versus a custom ACF theme, with real cost and timeline ranges.",
-    keywords: [
-      "WordPress page builder vs custom theme",
-      "Elementor vs custom WordPress theme",
-      "ACF WordPress theme cost",
-      "WordPress developer Philippines",
-    ],
-    excerpt:
-      "Page builders get a site live faster and cheaper; custom ACF themes cost more and take longer but pay off in speed and long-term flexibility. Here's how I actually decide between them.",
-    publishedDate: "2026-07-13",
-    content: [
-      {
-        type: "paragraph",
-        text: "Page builders like Elementor and Divi get a project live faster and cost less upfront; custom WordPress themes built with ACF cost more and take longer, but pay off in load speed, long-term maintainability, and how easily a site can grow. Here's how I actually decide between them on client work.",
-      },
-      { type: "heading", text: "What's actually different between a page builder and a custom theme?" },
-      {
-        type: "paragraph",
-        text: "Page builders like Elementor Pro and Divi generate their own markup and CSS on top of WordPress, and give you a visual, drag-and-drop editor. A custom theme built with Advanced Custom Fields (ACF) has hand-written templates and only ships the CSS and JS the site actually needs — nothing extra just because the builder might need it for some other page.",
-      },
-      { type: "heading", text: "When a page builder is the right call" },
-      {
-        type: "list",
-        items: [
-          "Budget is tight and the site needs to launch fast — a builder gets simple sites live in days, not weeks",
-          "The client (or their team) wants to edit pages themselves after launch, without touching code",
-          "The site is mostly static marketing pages without complex custom functionality",
-          "It's a landing page or temporary homepage that's likely to be redesigned again soon anyway",
-        ],
-      },
-      { type: "heading", text: "When a custom ACF theme is worth the extra cost" },
-      {
-        type: "list",
-        items: [
-          "Page speed and Core Web Vitals matter — no page builder ships as little code as a hand-built theme",
-          "The site needs custom content structures (flexible content blocks, repeaters) that a generic builder handles awkwardly",
-          "It's a WooCommerce store or has other complex functionality where builder overhead compounds",
-          "The client plans to keep and grow the site for years, not months",
-        ],
-      },
-      { type: "heading", text: "Page builder vs. custom theme, side by side" },
-      {
-        type: "table",
-        headers: ["", "Page Builder (Elementor/Divi)", "Custom ACF Theme"],
-        rows: [
-          ["Typical cost", "$600–1,500", "$1,500–4,000"],
-          ["Turnaround", "Usually under 2 weeks", "Usually 4–8 weeks"],
-          ["Page speed ceiling", "Good, capped by builder overhead", "Higher — only ships what the site needs"],
-          [
-            "Best for",
-            "Small sites, self-editing clients, quick launches",
-            "WooCommerce stores, custom content needs, long-term sites",
-          ],
-        ],
-      },
-      { type: "heading", text: "What I actually recommend to clients" },
-      {
-        type: "paragraph",
-        text: "I don't default to one or the other — I ask about budget, timeline, and how long the client plans to keep the site before recommending a page builder build or a custom ACF theme. Most of my work spans both: Elementor Pro and Divi when speed or budget calls for it, fully custom themes when performance or long-term flexibility matters more. If you're not sure which fits your project, that's the first thing I sort out on a call.",
-      },
-    ],
-  },
-  {
-    slug: "wordpress-developer-cost-philippines",
-    title: "How Much Does a WordPress Developer Cost in the Philippines? (2026 Rates)",
-    metaTitle: "How Much Does a WordPress Developer Cost in the Philippines? | Roy De La Torre",
-    metaDescription:
-      "Real 2026 hourly, retainer, and per-project rate ranges for hiring a WordPress developer in the Philippines, for both local and international clients.",
-    keywords: [
-      "WordPress developer cost Philippines",
-      "WordPress developer rates Philippines",
-      "how much does a WordPress website cost Philippines",
-      "freelance WordPress developer pricing Philippines",
-      "hire WordPress developer Philippines",
-    ],
-    excerpt:
-      "Real rate ranges for hiring a WordPress developer in the Philippines in 2026 — hourly, retainer, and per-project — broken down by whether you're a local business or hiring internationally.",
-    publishedDate: "2026-07-21",
-    content: [
-      {
-        type: "paragraph",
-        text: "\"How much does a WordPress developer cost?\" is one of the first questions I get from prospective clients, and the honest answer is: it depends on where you're based, how you're hiring, and what you need built. Below are the actual rate ranges I quote in 2026, broken out by engagement type, so you can budget before we even get on a call.",
-      },
-      { type: "heading", text: "Hourly rates" },
-      {
-        type: "table",
-        headers: ["Client type", "Rate"],
-        rows: [
-          ["Local PH clients", "₱500–₱900/hr (~$9–16)"],
-          ["International clients (US/AU/UK, direct)", "$15–30/hr"],
-          ["Agencies / platforms (Upwork, OnlineJobs.ph)", "$8–15/hr"],
-        ],
-      },
-      {
-        type: "paragraph",
-        text: "International direct clients pay more per hour than platform-sourced work, mainly because platform fees and client acquisition risk get priced in on marketplaces like Upwork.",
-      },
-      { type: "heading", text: "Per-project rates" },
-      {
-        type: "table",
-        headers: ["Project type", "Rate"],
-        rows: [
-          ["Landing page / temporary homepage", "$300–600"],
-          ["Standard business site (Elementor/Divi)", "$600–1,500"],
-          ["Custom theme with ACF flexible content", "$1,500–4,000"],
-          ["WooCommerce store", "$1,500–5,000"],
-          ["Site migration + rebuild", "$2,000–5,000+"],
-          ["Technical SEO audit + implementation", "$400–1,000"],
-        ],
-      },
-      { type: "heading", text: "Monthly retainer rates" },
-      {
-        type: "list",
-        items: [
-          "Part-time (20 hrs/week), international: $1,200–2,400/month (~₱68k–135k)",
-          "Part-time, PH-based company: ₱25k–45k/month",
-          "Maintenance / support retainer, per site: $150–400/month",
-        ],
-      },
-      { type: "heading", text: "What actually moves the price" },
-      {
-        type: "list",
-        items: [
-          "Custom ACF theme vs. page builder — custom code costs more upfront but ships less bloat long-term",
-          "WooCommerce or other complex functionality vs. a static business site",
-          "Whether you're hiring locally in the Philippines, hiring an international freelancer direct, or sourcing through a platform",
-          "One-off project vs. ongoing retainer — retainers are priced for predictable monthly work, not per-task",
-        ],
-      },
-      { type: "heading", text: "My honest take" },
-      {
-        type: "paragraph",
-        text: "If a quote for a standard WordPress business site comes in well under $600 or ₱25,000, ask what's being cut — usually it's either a page builder stretched past what it's good at, or no real testing or SEO setup before launch. On the other end, a five-figure quote for a simple brochure site is a sign you're paying for agency overhead rather than the actual build. These ranges reflect what real projects in my portfolio cost, not a rate card built to look competitive.",
-      },
-    ],
-  },
-];
+export const blogPosts: BlogPost[] = blogPostsData as BlogPost[];
 
 // No headshots yet, so cards fall back to initials via TeamAvatarPlaceholder
 // until real photos are available.
