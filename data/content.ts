@@ -484,8 +484,8 @@ export const homepageFaqs: FaqEntry[] = [
   {
     question: "How do I know you're a reliable developer?",
     answer:
-      "The most honest way is to look at the actual work — my portfolio has real, mostly-still-live client sites, not mockups, so you can see what I've shipped. I also follow the same documented five-step process on every project, so you know what to expect at each stage instead of guessing.",
-    link: { label: "See my projects", href: "https://chusiekokoro.com/" },
+      "The most honest way is to look at the actual work — my projects site has fully working demo builds you can click through yourself (live booking, a patient portal, online payments), all custom-coded, not mockups. I also follow the same documented five-step process on every project, so you know what to expect at each stage instead of guessing.",
+    link: { label: "Try the live demos", href: "https://chusiekokoro.com/" },
   },
   {
     // TODO(Roy): confirm these are the timelines you actually quote clients.
