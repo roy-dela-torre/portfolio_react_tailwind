@@ -14,7 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/services/wordpress-maintenance", priority: 0.8 },
     { path: "/experience", priority: 0.8 },
     { path: "/process", priority: 0.7 },
-    { path: "/projects", priority: 0.8 },
     { path: "/blog", priority: 0.7 },
     { path: "/pricing", priority: 0.8 },
   ];

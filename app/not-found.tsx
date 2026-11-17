@@ -48,7 +48,7 @@ export default function NotFound() {
               Back to Home
             </Link>
             <Link
-              href="/projects"
+              href="https://chusiekokoro.com/"
               className="inline-block rounded-full border border-white/10 px-7 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:border-accent/50 hover:text-accent"
             >
               View My Work

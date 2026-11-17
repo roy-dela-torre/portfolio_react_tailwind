@@ -65,7 +65,7 @@ export const navLinks = [
   { label: "Work", href: "/experience" },
   { label: "Skills", href: "/#skills" },
   { label: "Process", href: "/process" },
-  { label: "Projects", href: "/projects" },
+  { label: "Projects", href: "https://chusiekokoro.com/" },
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
 ];
@@ -78,7 +78,7 @@ export const sitemapLinks = [
   { label: "WordPress Maintenance & Security", href: "/services/wordpress-maintenance" },
   { label: "Experience", href: "/experience" },
   { label: "Process", href: "/process" },
-  { label: "Projects", href: "/projects" },
+  { label: "Projects", href: "https://chusiekokoro.com/" },
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
 ];
@@ -237,16 +237,7 @@ export type Project = {
   liveUrl: string;
 };
 
-export const projects: Project[] = [
-  {
-    id: 1,
-    title: "Raize Marketing",
-    description:
-      "Site for an SEO agency in the Philippines, covering traditional SEO and AI Engine Optimization (AEO).",
-    imageUrl: "/assets/img/raizemarketing.jpg",
-    liveUrl: "https://raizemarketing.com/",
-  },
-];
+export const projects: Project[] = [];
 
 export type Stat = {
   label: string;
@@ -494,7 +485,7 @@ export const homepageFaqs: FaqEntry[] = [
     question: "How do I know you're a reliable developer?",
     answer:
       "The most honest way is to look at the actual work — my portfolio has real, mostly-still-live client sites, not mockups, so you can see what I've shipped. I also follow the same documented five-step process on every project, so you know what to expect at each stage instead of guessing.",
-    link: { label: "See my projects", href: "/projects" },
+    link: { label: "See my projects", href: "https://chusiekokoro.com/" },
   },
   {
     // TODO(Roy): confirm these are the timelines you actually quote clients.
@@ -719,7 +710,7 @@ export const serviceDetails: Record<string, ServiceDetailData> = {
         question: "Do you have example Shopify stores I can look at?",
         answer:
           "My public portfolio here is mostly WordPress and WooCommerce case studies so far — Shopify work is newer. I'm happy to walk through my Shopify experience and approach directly on a call rather than pointing you to a placeholder link.",
-        link: { label: "See my WordPress projects", href: "/projects" },
+        link: { label: "See my WordPress projects", href: "https://chusiekokoro.com/" },
       },
       {
         question: "Can you migrate my store from WooCommerce (or another platform) to Shopify?",

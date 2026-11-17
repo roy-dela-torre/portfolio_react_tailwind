@@ -46,6 +46,15 @@ const nextConfig = {
   experimental: {
     inlineCss: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/projects",
+        destination: "https://chusiekokoro.com/",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
