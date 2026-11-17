@@ -13,11 +13,17 @@ export default function Projects() {
         </h1>
       </Reveal>
 
-      <Reveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} {...project} />
-        ))}
-      </Reveal>
+      {projects.length > 0 ? (
+        <Reveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} {...project} />
+          ))}
+        </Reveal>
+      ) : (
+        <Reveal stagger={false}>
+          <p className="text-base text-white/70 md:text-lg">New case studies coming soon.</p>
+        </Reveal>
+      )}
     </section>
   );
 }

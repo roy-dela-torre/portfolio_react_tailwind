@@ -239,7 +239,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 15,
+    id: 1,
     title: "Raize Marketing",
     description:
       "Site for an SEO agency in the Philippines, covering traditional SEO and AI Engine Optimization (AEO).",
