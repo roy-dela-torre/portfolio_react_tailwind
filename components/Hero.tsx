@@ -40,7 +40,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto aspect-[3/4] w-56 shrink-0 overflow-hidden rounded-2xl border border-white/10 md:mx-0 md:w-72">
+        <div className="relative mx-auto aspect-[3/4] w-56 shrink-0 overflow-hidden rounded-2xl md:mx-0 md:w-72">
           <Image
             src="/assets/img/profile.png"
             alt="Portrait of Roy De La Torre"
